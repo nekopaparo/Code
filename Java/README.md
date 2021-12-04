@@ -59,7 +59,7 @@ Integer.toString(i); // 整數轉字串
 ```Java
 int[] numbers_1 = new int[4]; // 預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
-int[][] numbers_3 = {{0, 1, 2},{3, 4, 5}}; // 二維
+int[][] numbers_3 = new int[2][3]; // 二維
 numbers_1.length; // 長度 -> 4
 numbers_2.join("_OAO_", array)	// 輸出成字串以_OAO_連接 -> "0_OAO_1_OAO_2_OAO_3"
 ```
