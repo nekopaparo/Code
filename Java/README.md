@@ -13,7 +13,7 @@ long    l=0L;
 float   f=0.0F;
 double  d=0.0;
 char    c='a';
-String str="abc";
+String s="abc";
 (int)'a'; //=97
 (char)97; //='a'
 ```
