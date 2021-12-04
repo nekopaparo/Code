@@ -20,6 +20,8 @@ String str="abc";
 ```Java
 String str1="Hello World Zeko";
 String str2="Hi Zeko";
+// 字串長度
+str1.length();
 // false 字串比較
 str1.equals(str2);
 // 字串分割
@@ -37,6 +39,9 @@ str1.isEmpty();
 
 ## 算術運算子
 ```Java
+// && -> and
+// || -> or
+// ! -> not
 Math.pow(4, 2); // 平方
 Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
 Math.abs(-3.14); // 絕對值
