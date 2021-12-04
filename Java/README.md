@@ -40,9 +40,7 @@ str1.isEmpty();
 
 ## 算術運算子
 ```Java
-// && -> and
-// || -> or
-// ! -> not
+// && -> and, || -> or, ! -> not, null
 Math.pow(4, 2); // 平方
 Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
 Math.abs(-3.14); // 絕對值

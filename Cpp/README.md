@@ -52,9 +52,10 @@ str1.empty();
 
 ## 算術運算子
 ```cpp
-// and OR (舊)&&  
+// and OR (舊)&&
 // or  OR (舊)||
 // not OR (舊)! 
+// NULL
 pow(4, 2); // 平方
 sqrt(4); /* 開根號 or pow(4, 0.5)*/
 abs(-3); fabs(-3.14); // 絕對值

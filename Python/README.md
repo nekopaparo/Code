@@ -38,9 +38,7 @@ str1 # ->True
 
 ## 算術運算子
 ```python
-# and
-# or
-# not
+# and, or, not, None
 4**2 # 平方
 4**0.5 # 開根號
 abs(-3.14) # 絕對值
