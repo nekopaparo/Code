@@ -1,4 +1,9 @@
-[術運算子算](#算術運算子)
+1. [變數](#變數)
+2. [字串處理](#字串處理)
+3. [算術運算子算](#算術運算子)
+4. [Array](#Array)
+5. [List](#List)
+6. [Obj](#Obj)
 ## 變數
 ```Java
 int     i=0;
@@ -6,7 +11,7 @@ long    l=0L;
 float   f=0.0F;
 double  d=0.0;
 char    c='a';
-Strging str="abc";
+String str="abc";
 (int)'a'; //=97
 (char)97; //='a'
 ```
@@ -32,15 +37,15 @@ str1.isEmpty();
 
 ## 算術運算子
 ```Java
-	Math.pow(4, 2); // 平方
-    Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
-    Math.abs(-3.14); // 絕對值
-    Math.round(2.4);	// 四捨五入
-    Math.ceil(2.4); // 無條件進位
-    Math.floor(2.4); // 無條件捨去
-    Integer.MAX_VALUE; // INT最大值
-    Integer.MIN_VALUE; // INT最小值
-    Integer.toString(i); // 整數轉字串
+Math.pow(4, 2); // 平方
+Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
+Math.abs(-3.14); // 絕對值
+Math.round(2.4);	// 四捨五入
+Math.ceil(2.4); // 無條件進位
+Math.floor(2.4); // 無條件捨去
+Integer.MAX_VALUE; // INT最大值
+Integer.MIN_VALUE; // INT最小值
+Integer.toString(i); // 整數轉字串
 ```
 
 ## Array
