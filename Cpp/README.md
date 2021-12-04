@@ -8,8 +8,8 @@
 ## 變數
 ```cpp
 int     i=0;
-long    l=0L;
-float   f=0.0F;
+long    l=0;
+float   f=0.0;
 double  d=0.0;
 char    c='a';
 string s="abc";
@@ -26,7 +26,19 @@ str1.length();
 // false 字串比較
 str1.compare(str2) //相同 -> 0, 不同 -> -1
 str1==str2;
-// 字串分割	
+// 字串擷取
+str1.substr(1,3);// 擷取1-3(不包含) -> el
+// 字串搜尋
+str1.find(find_str); // -> no find = -1
+// 字串取代
+string old_str="Word";//舊字串
+str.replace(input.find(old_str), old_str.length(), new_str);
+/*C++取代(舊字串第一個字的位置, 舊字串的長度, 新字串)*/
+// 字串為空?
+str1.empty();
+```
+```cpp
+// 字串分割(split)
 vector<string> mySplit(string str, string split){
     vector<string> result;
     int find=str.find(split);
@@ -38,16 +50,6 @@ vector<string> mySplit(string str, string split){
     result.push_back(str);
     return result;
 }
-// 字串擷取
-str1.substr(1,3);// 擷取1-3(不包含) -> el
-// 字串搜尋
-str1.find(find_str); // -> no find = -1
-// 字串取代
-string old_str="Word";//舊字串
-str.replace(input.find(old_str), old_str.length(), new_str);
-/*C++取代(舊字串第一個字的位置, 舊字串的長度, 新字串)*/
-// 字串為空?
-str1.empty();
 ```
 
 ## 算術運算子
