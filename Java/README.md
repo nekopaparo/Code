@@ -79,7 +79,7 @@ nums.isEmpty() // 是否為空
 ```Java
 // 排序 (小 -> 大)
 import java.util.Collections;
-Collections.sort(list);
+Collections.sort(nums);
 ```
 
 ## Obj
