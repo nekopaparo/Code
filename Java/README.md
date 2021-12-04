@@ -59,9 +59,9 @@ Integer.toString(i); // 整數轉字串
 ```Java
 int[] numbers_1 = new int[4]; // 預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
-// int[][] numbers_3 = new int[2][3]; // 二維
+int[][] numbers_3 = new int[2][3]; // 二維
 numbers_1.length; // 長度 -> 4
-numbers_2.join("_OAO_", array)	// 輸出成字串以_OAO_連接 -> "0_OAO_1_OAO_2_OAO_3"
+numbers_2.join("_OAO_", array);	// 輸出成字串以_OAO_連接 -> 0_OAO_1_OAO_2_OAO_3
 ```
 
 ## List
@@ -69,12 +69,12 @@ numbers_2.join("_OAO_", array)	// 輸出成字串以_OAO_連接 -> "0_OAO_1_OAO_
 import java.util.ArrayList;
 ArrayList<Integer> nums=new ArrayList<Integer>();
 nums.add(num); // 新增
-nums.get(index) // 取值
+nums.get(index); // 取值
 nums.remove(index); // 刪除
 nums.clear(); // 清空
 nums.size(); // 大小	
 nums.toArray(String[]::new); // 轉陣列
-nums.isEmpty() // 是否為空
+nums.isEmpty(); // 是否為空
 ```
 ```Java
 // 排序 (小 -> 大)
