@@ -47,7 +47,7 @@ str1.isEmpty();
 Math.pow(4, 2); // 平方
 Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
 Math.abs(-3.14); // 絕對值
-Math.round(2.4);	// 四捨五入
+Math.round(2.4); // 四捨五入
 Math.ceil(2.4); // 無條件進位
 Math.floor(2.4); // 無條件捨去
 Integer.MAX_VALUE; // INT最大值
@@ -59,7 +59,7 @@ Integer.toString(i); // 整數轉字串
 ```Java
 int[] numbers_1 = new int[4]; // 預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
-int[][] numbers_3 = new int[2][3]; // 二維
+// int[][] numbers_3 = new int[2][3]; // 二維
 numbers_1.length; // 長度 -> 4
 numbers_2.join("_OAO_", array)	// 輸出成字串以_OAO_連接 -> "0_OAO_1_OAO_2_OAO_3"
 ```
