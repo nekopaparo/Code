@@ -75,6 +75,8 @@ nums.clear(); // 清空
 nums.size(); // 大小	
 nums.toArray(String[]::new); // 轉陣列
 nums.isEmpty() // 是否為空
+```
+```Java
 // 排序 (小 -> 大)
 import java.util.Collections;
 Collections.sort(list);
