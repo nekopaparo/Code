@@ -1,18 +1,14 @@
 ## 目錄
-1. [變數](#變數)
-2. [字串處理](#字串處理)
-3. [算術運算子算](#算術運算子)
-4. [Array](#Array)
-5. [List](#List)
-6. [Obj](#Obj)
+|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
+|-|-|-|-|-|-|
 
 ## 變數
 ```Java
-int     i=0;
-long    l=0L;
-float   f=0.0F;
-double  d=0.0;
-char    c='a';
+int i=0;
+long l=0L;
+float f=0.0F;
+double d=0.0;
+char c='a';
 String s="abc";
 (int)'a'; //=97
 (char)97; //='a'
