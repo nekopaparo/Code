@@ -71,7 +71,7 @@ to_string(i); // 整數轉字串
 ```cpp
 int numbers_1[4]; //預設-1
 int numbers_2[] = {0, 1, 2, 3}; // 直接宣告
-int numbers_3[2][3] = {{0, 1, 2},{3, 4, 5}}; // 二維
+int numbers_3[2][3] = {{0, 1, 2}, {3, 4, 5}}; // 二維
 // 長度 -> 需已知空間才可使用,不然會ERROR
 numbers_4[6];
 numbers_4.size(); // -> 6
