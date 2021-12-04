@@ -1,10 +1,10 @@
 ## 目錄
-1. [變數](#變數)
-2. [字串處理](#字串處理)
-3. [算術運算子算](#算術運算子)
-4. [Array](#Array)
-5. [List](#List)
-6. [Obj](#Obj)
+1. [變數](##變數)
+2. [字串處理](##字串處理)
+3. [算術運算子算](##算術運算子)
+4. [Array](##Array)
+5. [List](##List)
+6. [Obj](##Obj)
 
 ## 變數
 ```cpp
@@ -67,7 +67,18 @@ INT_MIN; // INT最小值
 to_string(i); // 整數轉字串
 ```
 
-
+## Array
+```cpp
+int numbers_1[4]; //預設-1
+int numbers_2[] = {0, 1, 2, 3}; // 直接宣告
+int numbers_3[2][3] = {0, 1, 2, 3, 4, 5}; // 二維
+// 長度 -> 需已知空間才可使用,不然會ERROR
+numbers_4[6];
+numbers_4.size(); // -> 6
+n=6;
+numbers_5[n];
+numbers_5.size(); // -> Error
+```
 
 ## List
 ```cpp
