@@ -6,8 +6,20 @@
 |-|-|
 
 ## 目錄
-|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
-|-|-|-|-|-|-|
+|[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
+|-|-|-|-|-|-|-|
+
+## 輸入輸出
+```Java
+import java.util.Scanner;
+Scanner scn =new Scanner(System.in);
+int n = scn.nextInt();
+String s = scn.next();
+String line = scn.nextLine();
+
+System.out.println("n: " + n); //換行
+System.out.print("n: " + n);
+```
 
 ## 變數
 ```Java
