@@ -1,9 +1,22 @@
 # Cpp
 |[Java](../Java)|[Python](../Python)|
 |-|-|
+
 ## 目錄
-|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
-|-|-|-|-|-|-|
+|[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
+|-|-|-|-|-|-|-|
+
+## 輸入輸出
+```cpp
+int n;
+string s;
+cin >> n;
+cin >> s;
+
+cout << n+1 << endl; // endl -> \n
+cout << s<< endl;
+cou
+```
 
 ## 變數
 ```cpp
