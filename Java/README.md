@@ -2,7 +2,7 @@
 |[Cpp](../Cpp)|[Python](../Python)|
 |-|-|
 
-|[多執行緒](/java/base/_Thread.java)|[多執行緒](/java/bean/sql)|
+|[多執行緒](/java/base/_Thread.java)|[SQL](/java/bean/sql)|
 |-|-|
 
 ## 目錄
