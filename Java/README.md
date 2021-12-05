@@ -1,6 +1,10 @@
 # Java
 |[Cpp](../Cpp)|[Python](../Python)|
 |-|-|
+
+|[多執行緒](/java/base/_Thread.java)|[多執行緒](/java/bean/sql)|
+|-|-|
+
 ## 目錄
 |[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
 |-|-|-|-|-|-|
