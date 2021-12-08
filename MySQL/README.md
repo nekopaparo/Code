@@ -121,11 +121,11 @@ FROM cmdev.emp;
 
 #WHEN
 SELECT ename, salary, salary *
-CASE
+    CASE
     WHEN salary >= 3000 THEN 2.5
     WHEN salary BETWEEN 1000 AND 2999 THEN 1.5
     ELSE 1.2
-END bonus
+    END bonus
 FROM cmdev.emp
 ORDER BY bonus DESC;
 ```
