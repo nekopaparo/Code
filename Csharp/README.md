@@ -20,7 +20,7 @@ long    l=0;
 float   f=0.0;
 double  d=0.0;
 char    c='a';
-string s="abc";
+string  s="abc";
 (int)'a'; //=97
 (char)97; //='a'
 ```
@@ -52,7 +52,7 @@ int.Parse(num);
 
 ## 算術運算子
 ```cpp
-// &&, ||, !, Null
+// &&, ||, !, null
 Math.Pow(4, 2); // 平方
 Math.Sqrt(4); /* 開根號 or Math.Pow(4, 0.5)*/
 Math.Abs(-3.14); // 絕對值
