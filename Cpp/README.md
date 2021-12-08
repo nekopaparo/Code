@@ -1,6 +1,6 @@
 # Cpp
-|[Java](../Java)|[Python](../Python)|
-|-|-|
+|[C#](../Csharp)|[Java](../Java)|[Python](../Python)|
+|-|-|-|
 
 ## 目錄
 |[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|

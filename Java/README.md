@@ -1,6 +1,6 @@
 # Java
-|[Cpp](../Cpp)|[Python](../Python)|
-|-|-|
+[C#](../Csharp)|[Cpp](../Cpp)|[Python](../Python)|
+|-|-|-|
 
 |[多執行緒](./java/base/_Thread.java)|[SQL](./java/bean/sql)|
 |-|-|
