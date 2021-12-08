@@ -124,7 +124,7 @@ SELECT ename, salary, salary *
 	CASE
         WHEN salary >= 3000 THEN 2.5
         WHEN salary BETWEEN 1000 AND 2999 THEN 1.5
-         else 1.2
+        ELSE 1.2
 	END bonus
 FROM cmdev.emp
 ORDER BY bonus DESC;
