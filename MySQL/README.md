@@ -44,10 +44,10 @@ SELECT *
 FROM country
 WHERE Code IN ('TWN', 'JPN', 'USA', 'ITA', 'KOR');
 
+#判斷空值(NULL)
 SELECT Name, LifeExpectancy
 FROM country
-WHERE LifeExpectancy IS NULL; #判斷空值(NULL)
-#不等於 <=> , IS NOT
+WHERE LifeExpectancy IS NULL; #不等於 <=> , IS NOT
 
 # match
 SELECT *
@@ -87,16 +87,14 @@ SELECT CONCAT_WS('@@', 'HACHAMA', 'PEKO', 'COCO', 'GURA');
 SELECT LENGTH('不可以色色'); #長度(bytes),英文是1byte，中文的byte依照字元集決定，e.g, UTF8 -> 3byte
 SELECT CHAR_LENGTH('不可以色色'); #長度 -> 5
 
-
 #indexOf，回傳指字串(' ')的位置(回傳第一個)，查無回傳0
 SELECT LOCATE(' ','HELLO WORLD SQL');
 
 #隨機查詢
 SELECT Name
 FROM country
-ORDER BY ROUND()
+ORDER BY ROUND() #回傳0 <= ROUND() < 1 的隨機數字
 LIMIT 3;
-#回傳0 <= ROUND() < 1 的隨機數字
 ```
 |數字處理||
 |-|-|
@@ -123,11 +121,11 @@ FROM cmdev.emp;
 
 #WHEN
 SELECT ename, salary, salary *
-	   CASE
-         WHEN salary >= 3000 THEN 2.5
-         WHEN salary BETWEEN 1000 AND 2999 THEN 1.5
+	CASE
+        WHEN salary >= 3000 THEN 2.5
+        WHEN salary BETWEEN 1000 AND 2999 THEN 1.5
          else 1.2
-	   END bonus
+	END bonus
 FROM cmdev.emp
 ORDER BY bonus DESC;
 ```
@@ -141,4 +139,24 @@ GROUP BY Continent, Region WITH ROLLUP #WITH ROLLUP -> 群組統計
 #GROUP BY Continent WITH ROLLUP #未指定統計，依照前面來統計
 HAVING SUM(Population) > 100000000 #包含群組函數要使用HAVING
 ORDER BY Continent DESC;
+```
+
+## INNER JOIN 內部結合
+```sql
+SELECT Code, Capital, c.Name #非重複可不用指定表格
+#SELECT country.Code, country.Capital, city.Name
+FROM country, city c #指定別名
+WHERE Capital = ID;
+
+SELECT Code, Capital, c.Name
+FROM country INNER JOIN city c ON Capital = ID;
+
+#如果條件名稱相同可以用USING
+SELECT empno, ename, dname
+FROM cmdev.emp INNER JOIN cmdev.dept USING (deptno); 
+#FROM cmdev.emp e INNER JOIN cmdev.dept d on e.deptno = d.deptno;
+```
+
+## 資料維護
+```sql
 ```
