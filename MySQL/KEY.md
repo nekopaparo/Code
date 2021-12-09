@@ -86,8 +86,8 @@ CREATE TEMPORARY TABLE travelautoincr (
 )ENGINE = MyISAM;
 
 INSERT INTO travelautoincr (empno, location)
-VALUES (7369, 'CHICAGO'),(7369, 'CHICAGO'),
-    (7499, 'DALLAS'),(7499, 'DALLAS'),
-    (7499, 'DALLAS'),(7566, 'BOSTON'),
-    (7566, 'BOSTON');
+VALUES  (7369, 'CHICAGO'),(7369, 'CHICAGO'),
+        (7499, 'DALLAS'),(7499, 'DALLAS'),
+        (7499, 'DALLAS'),(7566, 'BOSTON'),
+        (7566, 'BOSTON');
 ```
