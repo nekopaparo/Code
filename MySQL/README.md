@@ -2,7 +2,7 @@
 |[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|
 |-|-|-|
 
-|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF - WHEN](#IF_-_WHEN)|[分組](#分組)|[內部結合](#INNER)|
+|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF - WHEN](#IF%20-%20WHEN)|[分組](#分組)|[內部結合](#INNER)|
 |-|-|-|-|-|-|
 
 ## 基本
