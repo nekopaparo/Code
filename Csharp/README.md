@@ -98,10 +98,7 @@ namespace Human
         // get, set
         public string Gender
         {
-            get
-            {
-                return gender;
-            }
+            get { return gender; }
             set
             {
                 if (value == "男" || value == "女")
