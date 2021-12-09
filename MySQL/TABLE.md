@@ -33,15 +33,15 @@ SET storage_engine = InnoDB;        # 客戶端離線便會失效
 ### 新增
 ```sql
 CREATE TABLE neko(
- ID INT UNSIGNED AUTO_INCREMENT KEY,
- # 數值欄位特有: 
- # UNSIGNED -> 不能儲存負數 
- # AUTO_INCREMENT -> 自動累計，系統會儲存累計如有比他大，便會用該數+1，從1開始累計
- Name CHAR(20) UNIQUE NOT NULL, # UNIQUE -> 不可重複
- Sex VARCHAR(20) DEFAULT '無' # DEFAULT -> 預設
-) ENGINE = InnoDB 			# 可省略  # 儲存引擎可用SHOW ENGINES查詢
-  CHARACTER SET = utf8		# 會用 	  # UTF8已棄用，請改用UTF8MB4
-  COLLATE = utf8_unicode_ci;	# 系統預設
+  ID INT UNSIGNED AUTO_INCREMENT KEY,
+  # 數值欄位特有: 
+  # UNSIGNED -> 不能儲存負數 
+  # AUTO_INCREMENT -> 自動累計，系統會儲存累計如有比他大，便會用該數+1，從1開始累計
+  Name CHAR(20) UNIQUE NOT NULL, # UNIQUE -> 不可重複
+  Sex VARCHAR(20) DEFAULT '無' # DEFAULT -> 預設
+)ENGINE = InnoDB 			# 可省略  # 儲存引擎可用SHOW ENGINES查詢
+ CHARACTER SET = utf8		# 會用 	  # UTF8已棄用，請改用UTF8MB4
+ COLLATE = utf8_unicode_ci;	# 系統預設
 
 CREATE TABLE tstable(
   ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
