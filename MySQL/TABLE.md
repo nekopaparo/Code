@@ -25,9 +25,10 @@ SET SESSION storage_engine = InnoDB;# 客戶端離線便會失效
 SET storage_engine = InnoDB;        # 客戶端離線便會失效
 
 
-# UNSIGNED ZEROFILL -> 少的會補0，將被移除不建議使用請使用LPAD()，要用ZEROFILL一定要搭配UNSIGNED
+# UNSIGNED ZEROFILL -> 少的會補0，將被移除不建議使用請使用LPAD()
+# 要用ZEROFILL一定要搭配UNSIGNED
 ```
-
+---
 ## Table
 ### 新增
 ```sql
@@ -50,7 +51,7 @@ CREATE TABLE tstable(
 CREATE TABLE IF NOT EXISTS newneko
 LIKE neko; 
 ```
-#### 暫存表格(TEMPORARY)
+##### * 暫存表格(TEMPORARY)
 ```sql
 # TEMPORARY -> 暫存表格，用戶端離線便會刪除
 # 建立資料表的名字已存在時，資料庫的會被隱藏，重開就能再次讀取
@@ -59,7 +60,7 @@ CREATE TEMPORARY TABLE neko(
     Name VARCHAR(5)
 );
 ```
-### 修改表格名稱
+### 修改Table名稱
 ```sql
 ALTER TABLE new_neko RENAME TO neko; # TO 可省略，可用在暫存資料表
 RENAME TABLE neko TO neko1, neko3 TO neko4; # 可一次多個修改，無法使用在暫存資料表
@@ -68,7 +69,7 @@ RENAME TABLE neko TO neko1, neko3 TO neko4; # 可一次多個修改，無法使�
 ```sql
 DROP TABLE IF EXISTS neko1, neko4; #多個table刪除
 ```
-
+---
 ## 欄位
 ### 新增
 ```sql
