@@ -1,6 +1,7 @@
 # 資料庫 DATABASE
-|[TABLE](./TABLE.md)|[DATA](./DATA.md)|
-|-|-|
+|[MySQL](.)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|
+|-|-|-|
+
 ```sql
 #顯示該資料庫的相關設定
 SHOW CREATE DATABASE mydb;

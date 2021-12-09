@@ -1,32 +1,32 @@
-# 資料表 TABLE
+# 資料表 TABLE 
+|[MySQL](.)|[DATABASE](./DATABASE.md)|[DATA](./DATA.md)|
+|-|-|-|
+
 |[Table](#Table)|[欄位](#欄位)|
 |-|-|
-```sql
--- 相關資訊 --
 
+##### 相關資訊
+```sql
 SHOW TABLES FROM world;
 
-SELECT TABLE_SCHEMA,	# 資料庫名稱
-	   TABLE_NAME,		# 表格名稱
-	   ENGINE,			# 使用的引擎
-	   TABLE_ROWS,		# 記錄數量
-	   AUTO_INCREMENT,	# AUTO_INCREMENT 目前儲存紀錄
-	   TABLE_COLLATION	# 排序集
+SELECT
+	TABLE_SCHEMA,	# 資料庫名稱
+	TABLE_NAME,		# 表格名稱
+	ENGINE,			# 使用的引擎
+	TABLE_ROWS,		# 記錄數量
+	AUTO_INCREMENT,	# AUTO_INCREMENT 目前儲存紀錄
+	TABLE_COLLATION	# 排序集
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA = 'world';
-
--- 修改預設引擎 --
-
-# 直接修改my.ini設定檔 -> default-storage-engine=InnoDB
+```
+##### 修改預設引擎
+```sql
+#直接修改my.ini設定檔 -> default-storage-engine=InnoDB
 
 SET GLOBAL storage_engine = InnoDB; # 伺服器重啟便會失效
 
 SET SESSION storage_engine = InnoDB;# 客戶端離線便會失效
 SET storage_engine = InnoDB;        # 客戶端離線便會失效
-
-
-# UNSIGNED ZEROFILL -> 少的會補0，將被移除不建議使用請使用LPAD()
-# 要用ZEROFILL一定要搭配UNSIGNED
 ```
 ---
 ## Table
@@ -50,6 +50,9 @@ CREATE TABLE tstable(
 #從已存在資料表複製格式(設定)建立新資料表
 CREATE TABLE IF NOT EXISTS newneko
 LIKE neko; 
+
+# UNSIGNED ZEROFILL -> 少的會補0，將被移除不建議使用請使用LPAD()
+# 要用ZEROFILL一定要搭配UNSIGNED
 ```
 ##### * 暫存表格(TEMPORARY)
 ```sql
