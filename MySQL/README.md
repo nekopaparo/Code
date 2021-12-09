@@ -2,7 +2,7 @@
 |[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|
 |-|-|-|
 
-|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF/WHEN](#IF/WHEN)|[分組](#分組)|[內部結合](#內部結合)|
+|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF-WHEN](#IF-WHEN)|[分組](#分組)|[內部結合](#內部結合)|
 |-|-|-|-|-|-|
 
 ## 基本
@@ -113,7 +113,7 @@ LIMIT 3;
 |DAYNAME()|Sunday(日) - Saturday(六)|
 |DAYOFWEEK()|1(日) - 7(六)|
 
-## IF/WHEN
+## IF-WHEN
 ```sql
 #IF
 SELECT IF(Population > 500000, Population, 'QAQ')
