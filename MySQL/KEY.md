@@ -1,6 +1,6 @@
 # KEY(索引)
-|[MySQL](.)|[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|
-|-|-|-|-|
+|[MySQL](.)|[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[VIEW](./VIEW.md)|
+|-|-|-|-|-|
 
 |[新增](#建立索引)|[刪除](#刪除索引)|[AUTO_INCREMENT](#AUTO_INCREMENT)|
 |-|-|-|

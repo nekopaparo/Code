@@ -1,6 +1,6 @@
 # 資料維護 DATA
-|[MySQL](.)|[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[KEY](./KEY.md)|
-|-|-|-|-|
+|[MySQL](.)|[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[KEY](./KEY.md)|[VIEW](./VIEW.md)|
+|-|-|-|-|-|
 
 ```sql
 #表格資訊(相關設定)

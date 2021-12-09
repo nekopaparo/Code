@@ -1,6 +1,6 @@
 # 資料庫 DATABASE
-|[MySQL](.)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[KEY](./KEY.md)|
-|-|-|-|-|
+|[MySQL](.)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[KEY](./KEY.md)|[VIEW](./VIEW.md)|
+|-|-|-|-|-|
 
 ```sql
 #顯示該資料庫的相關設定
