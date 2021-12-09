@@ -1,6 +1,6 @@
 # 資料表 TABLE 
-|[MySQL](.)|[DATABASE](./DATABASE.md)|[DATA](./DATA.md)|
-|-|-|-|
+|[MySQL](.)|[DATABASE](./DATABASE.md)|[DATA](./DATA.md)|[KEY](./KEY.md)|
+|-|-|-|-|
 
 |[Table](#Table)|[欄位](#欄位)|
 |-|-|
