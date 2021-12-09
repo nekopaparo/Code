@@ -12,7 +12,7 @@ SHOW TABLES FROM world;
 SELECT
   TABLE_SCHEMA,		# 資料庫名稱
   TABLE_NAME,		# 表格名稱
-  ENGINE,			# 使用的引擎
+  ENGINE,		# 使用的引擎
   TABLE_ROWS,		# 記錄數量
   AUTO_INCREMENT,	# AUTO_INCREMENT 目前儲存紀錄
   TABLE_COLLATION	# 排序集
