@@ -2,8 +2,8 @@
 |[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[KEY](./KEY.md)|
 |-|-|-|-|
 
-|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF-WHEN](#IF-WHEN)|[分組](#分組)|[內部結合](#內部結合)|
-|-|-|-|-|-|-|
+|[基本](#基本)|[WHERE](#WHERE)|[常用方法](#常用方法)|[IF-WHEN](#IF-WHEN)|[分組](#分組)|[內部結合](#內部結合)|[子查詢](#子查詢)|
+|-|-|-|-|-|-|-|
 
 ## 基本
 ```sql
@@ -160,4 +160,33 @@ FROM country INNER JOIN city c ON Capital = ID;
 SELECT empno, ename, dname
 FROM cmdev.emp INNER JOIN cmdev.dept USING (deptno); 
 #FROM cmdev.emp e INNER JOIN cmdev.dept d on e.deptno = d.deptno;
+```
+
+## 子查詢
+```sql
+SELECT Code, Population
+FROM country
+WHERE Population > (SELECT Population
+                    FROM country
+                    WHERE Code = 'USA');
+
+SELECT name
+FROM country
+WHERE (Region, GovernmentForm) = (SELECT Region, GovernmentForm
+                                  FROM country
+                                  WHERE Name = 'Iraq');
+
+SELECT Continent, Name, GNP
+FROM country
+WHERE (Continent, GNP) IN (SELECT Continent, MAX(GNP)
+                           FROM country
+                           GROUP BY Continent);
+
+INSERT INTO mycountry
+(SELECT Code, Name, Continent, Region, Population, GNP
+ FROM country
+ WHERE Continent = 'Asia');
+ 
+# 要替子查詢表格命名，不然會ERROR
+SELECT * FROM (SELECT * FROM city) tablename; 
 ```

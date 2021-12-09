@@ -77,7 +77,7 @@ DROP INDEX name_tel_index;
 ```
 ## AUTO_INCREMENT
 ```sql
-#在 引擎:MyISAM 中特殊用法
+#在 引擎:MyISAM 中特殊用法 -> 自動累加
 CREATE TEMPORARY TABLE travelautoincr (
     empno INT NOT NULL,
     location VARCHAR(16) NOT NULL,
