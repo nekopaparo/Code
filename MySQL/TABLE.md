@@ -10,12 +10,12 @@
 SHOW TABLES FROM world;
 
 SELECT
-	TABLE_SCHEMA,	# 資料庫名稱
-	TABLE_NAME,		# 表格名稱
-	ENGINE,			# 使用的引擎
-	TABLE_ROWS,		# 記錄數量
-	AUTO_INCREMENT,	# AUTO_INCREMENT 目前儲存紀錄
-	TABLE_COLLATION	# 排序集
+  TABLE_SCHEMA,		# 資料庫名稱
+  TABLE_NAME,		# 表格名稱
+  ENGINE,			# 使用的引擎
+  TABLE_ROWS,		# 記錄數量
+  AUTO_INCREMENT,	# AUTO_INCREMENT 目前儲存紀錄
+  TABLE_COLLATION	# 排序集
 FROM information_schema.TABLES
 WHERE TABLE_SCHEMA = 'world';
 ```
@@ -63,8 +63,8 @@ LIKE neko;
 # TEMPORARY -> 暫存表格，用戶端離線便會刪除
 # 建立資料表的名字已存在時，資料庫的會被隱藏，重開就能再次讀取
 CREATE TEMPORARY TABLE neko(
-	ID VARCHAR(5),	
-    Name VARCHAR(5)
+  ID VARCHAR(5),	
+  Name VARCHAR(5)
 );
 ```
 ### 修改Table名稱
