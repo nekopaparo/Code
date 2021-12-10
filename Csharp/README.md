@@ -1,4 +1,4 @@
-# C#
+# csharp
 |[Cpp](../Cpp)|[Java](../Java)|[Python](../Python)|
 |-|-|-|
 
@@ -7,14 +7,14 @@
 |-|-|-|-|-|-|-|
 
 ## 輸入輸出
-```c#
+```csharp
 string s = System.Console.ReadLine();
 
 System.Console.WriteLine(s); // Line = "\n"
 ```
 
 ## 變數
-```c#
+```csharp
 int     i=0;
 long    l=0;
 float   f=0.0;
@@ -26,7 +26,7 @@ string  s="abc";
 ```
 
 ## 字串處理
-```c#
+```csharp
 string str1="Hello World Zeko";
 string str2="Hi Zeko";
 // 字串長度
@@ -41,7 +41,7 @@ str1.Substring(1,3) // 擷取3個 -> "ell"
 // 字串搜尋
 str1.IndexOf(find_str); // -> no find = -1
 // 字串取代
-str.Replace(old_str, new_str)
+str1.Replace(old_str, new_str)
 // 字串為空?
 string.IsNullOrEmpty(str1)
 // 字串轉數字
@@ -65,7 +65,7 @@ Convert.ToString(i); // 整數轉字串
 ```
 
 ## Array
-```c#
+```csharp
 int[] numbers_1 = new int[4]; //預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
 int[,] numbers_3 = {{0, 1, 2},{3, 4, 5}}; // 二維, numbers_3[0,1] -> 1, 三維=[,,] 
@@ -73,12 +73,12 @@ numbers_1.Length; // 長度
 ```
 
 ## List
-```c#
+```csharp
 // 待更新
 ```
 
 ## Obj
-```c#
+```csharp
 /*---calss---*/
 namespace Human
 {
