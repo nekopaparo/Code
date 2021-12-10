@@ -2,6 +2,7 @@
 |[MySQL](.)|[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[VIEW](./VIEW.md)|
 |-|-|-|-|-|
 
+---
 |[新增](#建立索引)|[刪除](#刪除索引)|[AUTO_INCREMENT](#AUTO_INCREMENT)|
 |-|-|-|
 
@@ -11,7 +12,7 @@ SHOW INDEX FROM mydb.addressbook;
 ```
 
 ## 建立索引
-### 新增TABLE時建立
+#### 新增TABLE時建立
 ```sql
 # 索引寫在後面
 CREATE TABLE mydb.addressbook (
@@ -38,7 +39,7 @@ CREATE TEMPORARY TABLE addressbook (
     INDEX (name, tel)
 );
 ```
-### 事後建立
+#### 事後建立
 ```sql
 CREATE TEMPORARY TABLE addressbook (
     id INT UNSIGNED,
