@@ -1,4 +1,4 @@
-# csharp
+# C#
 |[Cpp](../Cpp)|[Java](../Java)|[Python](../Python)|
 |-|-|-|
 
