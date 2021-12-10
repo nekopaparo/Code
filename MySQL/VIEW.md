@@ -6,10 +6,16 @@
 |-|-|-|
 ## 查看
 ```sql
+#查看VIEW的設定
 DESC CountryMaxGNP;
 
+#查看資料庫中所有的VIEW
 SELECT *
 FROM information_schema.VIEWS;
+
+#使用VIEW
+SELECT * 
+FROM CountryMaxGNP;
 ```
 
 ## 建立
