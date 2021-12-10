@@ -10,7 +10,7 @@
 |-|-|-|-|-|-|-|
 
 ## 輸入輸出
-```Java
+```java
 import java.util.Scanner;
 Scanner scn =new Scanner(System.in);
 int n = scn.nextInt();
@@ -22,7 +22,7 @@ System.out.print("n: " + n);
 ```
 
 ## 變數
-```Java
+```java
 int i=0;
 long l=0L;
 float f=0.0F;
@@ -34,7 +34,7 @@ String s="abc";
 ```
 
 ## 字串處理
-```Java
+```java
 String str1="Hello World Zeko";
 String str2="Hi Zeko";
 // 字串長度
@@ -55,7 +55,7 @@ str1.isEmpty();
 ```
 
 ## 算術運算子
-```Java
+```java
 // && -> and, || -> or, ! -> not, null
 Math.pow(4, 2); // 平方
 Math.sqrt(4); /* 開根號 or Math.pow(4, 0.5)*/
@@ -69,7 +69,7 @@ Integer.toString(i); // 整數轉字串
 ```
 
 ## Array
-```Java
+```java
 int[] numbers_1 = new int[4]; // 預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
 int[][] numbers_3 = new int[2][3]; // 二維
@@ -78,7 +78,7 @@ numbers_2.join("_OAO_", array);	// 輸出成字串以_OAO_連接 -> 0_OAO_1_OAO_
 ```
 
 ## List
-```Java
+```java
 import java.util.ArrayList;
 ArrayList<Integer> nums=new ArrayList<Integer>();
 nums.add(num); // 新增
@@ -89,14 +89,14 @@ nums.size(); // 大小
 nums.toArray(String[]::new); // 轉陣列
 nums.isEmpty(); // 是否為空
 ```
-```Java
+```java
 // 排序 (小 -> 大)
 import java.util.Collections;
 Collections.sort(nums);
 ```
 
 ## Obj
-```Java
+```java
 /*---calss---*/
 class Person{
     public String name;
