@@ -36,6 +36,9 @@ string str1="Hello World Zeko";
 string str2="Hi Zeko";
 // 字串長度
 str1.length();
+//字元長度
+char cs[100] = "Hello World";
+strlen(cs); // -> 11
 // false 字串比較
 str1.compare(str2) //相同 -> 0, 不同 -> -1
 str1==str2;
@@ -49,6 +52,10 @@ str.replace(input.find(old_str), old_str.length(), new_str);
 /*C++取代(舊字串第一個字的位置, 舊字串的長度, 新字串)*/
 // 字串為空?
 str1.empty();
+// 字元複製
+char cs1[100] = "Hello World";
+char cs2[100];
+strcpy_s(cs2, cs1);
 ```
 ```cpp
 // 字串分割(split)
