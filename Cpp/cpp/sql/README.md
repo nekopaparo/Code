@@ -1,18 +1,26 @@
 # lib use
 |SQL||||
 |-|-|-|-|
-|[MySQL](./MySQL.java)|.\lib\libmysql.lib<br>.\lib\libmysql.dll|.\MySQL\MySQL Server 8.0|[環境設定(Visual Studio 2019)](./mysqlSet.md)|
+|[MySQL](./MySQL.cpp)|.\lib\libmysql.lib<br>.\lib\libmysql.dll|.\MySQL\MySQL Server 8.0|[環境設定(Visual Studio 2019)](./mysqlSet.md)|
 
 
 # code use
 ## MySQL
-```java
-MySQL mysql = new MySQL();
-		
-String add = "INSERT neko(id, name, tel) VALUES(1, 'cat', '0800')";
-mysql.executeUpdate(add);
-String show = "SELECT * FROM neko";
-mysql.executeQuery(show);
-String delete = "DELETE FROM neko WHERE id >= 0";
-mysql.executeUpdate(delete);
+```cpp
+#include "MySQL.cpp"
+
+int main()
+{
+	MySQL my = MySQL();
+
+	char add[256] = " INSERT neko(id, name, tel) VALUES(1, 'cat', '0800')  ";
+	my.query(add);
+	char show[256] = "SELECT * FROM neko";
+	my.query(show);
+	char _delete[256] = "DELETE FROM neko WHERE id >= 0";
+	my.query(_delete);
+
+	system("pause");
+	return 0;
+}
 ```
