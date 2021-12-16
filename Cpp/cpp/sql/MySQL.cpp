@@ -4,13 +4,13 @@ using namespace std;
 class MySQL {
 private:
 	MYSQL* mysql;
-	//¨Ï¥ÎªÌ³]©w
+	//ä½¿ç”¨è€…è¨­å®š
 	char host[256] = "localhost";
 	char user[256] = "root";
 	char password[256] = "1234";
 	char dbName[256] = "world";
 
-	//¥i¥Î¹w³]
+	//å¯ç”¨é è¨­
 	int port = 0;
 	char unix_socket[256] = { NULL };
 	long client_flag = 0;
@@ -22,12 +22,12 @@ public:
 		}
 		else{
 			mysql_set_character_set(mysql, "utf8");
-			//¸ü¤Jconnect
+			//è¼‰å…¥connect
 			if (mysql_real_connect(mysql, host, user, password, dbName, port, unix_socket, client_flag) == 0) {
 				cout << mysql_error(mysql) << endl;
 			}
 			else {
-				cout << "¦¨¥\¸ü¤J¸ê®Æ®w" << endl;
+				cout << "æˆåŠŸè¼‰å…¥è³‡æ–™åº«" << endl;
 			}
 		}
 	}
@@ -40,17 +40,17 @@ public:
 			cout << "ERROR:sql -> " << mysql_error(mysql) << endl;
 			return false;
 		}
-		//µ²ªG result
+		//çµæœ result
 		MYSQL_RES* res = mysql_store_result(mysql);
-		if (res == 0) return true; //µL¿é¥Xµ²ªG
+		if (res == 0) return true; //ç„¡è¼¸å‡ºçµæœ
 		int column = mysql_num_fields(res);
-		//¼ĞÃD
+		//æ¨™é¡Œ
 		for (int index = 0; index < column; index++)
 		{
 			cout << mysql_fetch_field(res)->name << "\t";
 		}
 		cout << endl;
-		//¤º®e
+		//å…§å®¹
 		MYSQL_ROW row;
 		unsigned long* values_length;
 		int index;
@@ -58,8 +58,8 @@ public:
 			values_length = mysql_fetch_lengths(res);
 			for (index = 0; index < column; index++)
 			{
-				//row[index] = NULL®É¡A·|¸õ¥XERRORµLªk¨ú¥X
-				//§Q¥Î­Èªºªø«×¨Ó±Æ°£ªÅ­È(NULL) https://dev.mysql.com/doc/c-api/8.0/en/mysql-fetch-row.html
+				//row[index] = NULLæ™‚ï¼Œæœƒè·³å‡ºERRORç„¡æ³•å–å‡º
+				//åˆ©ç”¨å€¼çš„é•·åº¦ä¾†æ’é™¤ç©ºå€¼(NULL) https://dev.mysql.com/doc/c-api/8.0/en/mysql-fetch-row.html
 				if (values_length[index]) {
 					cout << row[index] << "\t";
 				}
