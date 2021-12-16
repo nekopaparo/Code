@@ -1,7 +1,7 @@
 # lib use
-|SQL||||
+|SQL|lib|位置|環境設定|
 |-|-|-|-|
-|[MySQL](./MySQL.cpp)|.\lib\libmysql.lib<br>.\lib\libmysql.dll|.\MySQL\MySQL Server 8.0|[環境設定(Visual Studio 2019)](./mysqlSet.md)|
+|[MySQL](./MySQL.cpp)|.\lib\libmysql.lib<br>.\lib\libmysql.dll|.\MySQL\MySQL Server 8.0|[Visual Studio 2019](./mysqlSet.md)|
 
 
 # code use
