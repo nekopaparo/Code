@@ -2,7 +2,7 @@
 |[C#](../Csharp)|[Java](../Java)|[Python](../Python)|
 |-|-|-|
 
-|[SQL](.)|
+|[SQL](./cpp/sql)|
 |-|
 
 ## 目錄
