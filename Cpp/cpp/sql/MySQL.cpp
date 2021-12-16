@@ -45,8 +45,7 @@ public:
 		if (res == 0) return true; //無輸出結果
 		int column = mysql_num_fields(res);
 		//標題
-		for (int index = 0; index < column; index++)
-		{
+		for (int index = 0; index < column; index++){
 			cout << mysql_fetch_field(res)->name << "\t";
 		}
 		cout << endl;
@@ -56,8 +55,7 @@ public:
 		int index;
 		while (row = mysql_fetch_row(res)) {
 			values_length = mysql_fetch_lengths(res);
-			for (index = 0; index < column; index++)
-			{
+			for (index = 0; index < column; index++){
 				//row[index] = NULL時，會跳出ERROR無法取出
 				//利用值的長度來排除空值(NULL) https://dev.mysql.com/doc/c-api/8.0/en/mysql-fetch-row.html
 				if (values_length[index]) {
