@@ -11,13 +11,13 @@
 
 int main()
 {
-	MySQL my = MySQL();
+	sql::MySQL my;
 
-	char add[256] = " INSERT neko(id, name, tel) VALUES(1, 'cat', '0800')  ";
+	const char* add = " INSERT neko(id, name, tel) VALUES(1, 'cat2222', '0800')  ";
 	my.query(add);
-	char show[256] = "SELECT * FROM neko";
-	my.query(show);
-	char _delete[256] = "DELETE FROM neko WHERE id >= 0";
+	const char* show = "SELECT * FROM neko";
+	my.showResult(show);
+	const char* _delete = "DELETE FROM neko WHERE id >= 0";
 	my.query(_delete);
 
 	system("pause");
