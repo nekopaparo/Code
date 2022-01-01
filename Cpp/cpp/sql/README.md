@@ -41,7 +41,7 @@ int main()
 				  "Sex	VARCHAR(20) )";
 	my.query(createTable);
 	const char* add = "INSERT INTO neko(ID, Name) "	\
-					  "VALUES (1, 'cat1'), (2, 'cat2'), (3, 'cat3');";
+	  "VALUES (1, 'cat1'), (2, 'cat2'), (3, 'cat3');";
 	my.query(add);
 	const char* show = "SELECT * FROM neko";
 	my.showResult(show);
