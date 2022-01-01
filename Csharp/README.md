@@ -1,5 +1,5 @@
 # C#
-|[Cpp](../Cpp)|[Java](../Java)|[Python](../Python)|
+|[C++](../Cpp)|[Java](../Java)|[Python](../Python)|
 |-|-|-|
 
 |[SQL](./csharp/sql)|

@@ -1,5 +1,5 @@
 # Python
-[C#](../Csharp)|[Cpp](../Cpp)|[Java](../Java)|
+[C#](../Csharp)|[C++](../Cpp)|[Java](../Java)|
 |-|-|-|
 
 |[爬蟲](./python/webcrawler.py)|
