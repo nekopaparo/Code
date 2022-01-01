@@ -20,7 +20,7 @@ int main()
 				  "Name	CHAR(20) UNIQUE NOT NULL, "	\
 				  "tel	VARCHAR(20) )";
 	my.query(createTable);
-	const char* add = " INSERT neko(id, name, tel) VALUES(1, 'cat2222', '0800')  ";
+	const char* add = "INSERT neko(id, name, tel) VALUES(1, 'cat2222', '0800')";
 	my.query(add);
 	const char* show = "SELECT * FROM neko";
 	my.showResult(show);
