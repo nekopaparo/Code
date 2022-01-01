@@ -36,9 +36,9 @@ int main()
 	sql::MySQLite my;
 
 	const char* createTable = "CREATE TABLE neko("	\
-					  "ID	INT  KEY, "	\
-					  "Name	CHAR(20) UNIQUE NOT NULL, "	\
-					  "Sex	VARCHAR(20) )";
+				  "ID	INT  KEY, "	\
+				  "Name	CHAR(20) UNIQUE NOT NULL, "	\
+				  "Sex	VARCHAR(20) )";
 	my.query(createTable);
 	const char* add = "INSERT INTO neko(ID, Name) "	\
 					  "VALUES (1, 'cat1'), (2, 'cat2'), (3, 'cat3');";
