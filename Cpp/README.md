@@ -160,3 +160,32 @@ p1.set("娚"); // gender = null
 // get
 cout << "gender : " << p1.get() << endl;
 ```
+
+# 待整理
+## const
+```cpp
+int i = 3, n = 4;
+/* value */
+const int ci = 5; // 值不可變
+ci = 6; // error
+const int Ci; // error, 必須初始化(給值)
+/* p */
+const int* cpi; // 指向的值不可變動
+cpi = &n;
+*cpi = 15; // error
+/*--------------------*/
+int* const pci = &i; // 指向不可變, 必須初始化(給指向)
+pci = &n; //error
+*pci = 40;
+```
+## constexpr
+```cpp
+// 和const區分，作為常數使用
+constexpr int i = 10;
+constexpr int n = i * 10;
+int I = 10;
+constexpr int N = I * 10; // error, 只能用常數運算
+/* p */
+int v = 10; // 必須定義在函式外或使用static
+constexpr int *pv = &v; // 指向不可變
+```
