@@ -189,3 +189,14 @@ constexpr int N = I * 10; // error, 只能用常數運算
 int v = 10; // 必須定義在函式外或使用static
 constexpr int *pv = &v; // 指向不可變
 ```
+## 別名(alias)
+```cpp
+// typedef
+typedef const char* str;
+str s1 = "test1";
+str* ps1 = &s1;
+// using
+using str_ = const char*;
+str_ s2 = "test2";
+str_* ps2 = &s2;
+```
