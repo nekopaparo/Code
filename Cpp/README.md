@@ -200,3 +200,13 @@ using str_ = const char*;
 str_ s2 = "test2";
 str_* ps2 = &s2;
 ```
+## auto
+```cpp
+auto i = 10, * p = &i;
+auto c = 'A', s = "abc"; // error, 型別不一致
+const int n = 2;
+auto p1 = &n;
+p1 = &i;
+const auto p2 = &n;
+p2 = &i; // error
+```
