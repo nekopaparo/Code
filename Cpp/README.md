@@ -218,9 +218,7 @@ p2 = &i; // error
 #include <iostream>
 struct H1
 {
-	H1() {
-		std::cout << "H1 Hi\n";
-	}
+    H1() {std::cout << "H1 Hi\n";}
 };
 #endif
 ```
@@ -231,9 +229,7 @@ struct H1
 #include <iostream>
 struct H2
 {
-	H2() {
-		std::cout << "H2 Hi\n";
-	}
+    H2(){std::cout << "H2 Hi\n";}
 };
 #endif
 ```
