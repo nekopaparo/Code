@@ -224,7 +224,7 @@ struct H1
 ```
 ### H2.h
 ```cpp
-#ifndef TEST
+#ifndef TEST // 前置處理器的變數通常全部用大寫
 #define TEST
 #include <iostream>
 struct H2
