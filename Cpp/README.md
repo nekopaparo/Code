@@ -246,3 +246,40 @@ int main()
     return 0;
 }
 ```
+## using
+```cpp
+#include <iostream>
+using std::cin;
+int main()
+{
+    int a;
+    std::cin >> a; // OK, 已先宣告std::cin
+    cout << a; // error, 缺少std
+    std::cout << a; // OK
+    return 0;
+}
+```
+## string
+### 讀取 (cin >> a bb ccc)
+```cpp
+#include <iostream>
+#include <string>
+int main()
+{
+    std::string s;
+    
+    // 讀取到空白
+    //a
+    //bb
+    //ccc
+    while (std::cin >> s) {
+        std::cout << s << std::endl;
+    }
+    // 讀取一行
+    //a bb ccc
+    while (std::getline(std::cin, s)) {
+        std::cout << s << std::endl;
+    }
+    return 0;
+}
+```
