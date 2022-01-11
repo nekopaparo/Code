@@ -283,3 +283,21 @@ int main()
     return 0;
 }
 ```
+### 大小寫
+```cpp
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+int main()
+{
+    string s("Hello World!!!");
+    for (char &c : s) {
+        c = toupper(c); // 大寫
+        //c = toupper(c); // 小寫
+    }
+    cout << s;
+
+    return 0;
+}
+```
