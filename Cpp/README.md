@@ -109,6 +109,10 @@ numbers_5.size(); // -> Error
 ```cpp
 #include <vector>
 vector<int> nums;
+// vector<int> nums = {1,2,3}; //初始化
+// vector<int> nums(10, -1); // (數量, 初始值) 
+// nums = {4,5,6}; //會覆蓋原本的
+
 nums.push_back(num); // 新增
 nums.at(index); list[index]; // 取值
 nums.clear(); // 清空
@@ -121,6 +125,10 @@ sort(nums.begin(), nums.begin()+nums.size());
 for(auto num = nums.begin(); num != nums.end(); ++num){
     cout >> *num >> endl;
 }
+// 複製copy
+vector<int> nums_cp1(nums);
+vector<int> nums_cp2 = nums;
+
 ```
 
 ## Obj
@@ -210,6 +218,12 @@ p1 = &i;
 const auto p2 = &n;
 p2 = &i; // error
 ```
+## decltype(型別複製)
+```cpp
+int i = 1;
+decltype(i) n1 = 0; // n1 = int
+decltype(i / 0.3) n2; // n2 = double
+```
 ## 前置處理器(preprocessor)
 ### H1.h
 ```cpp
@@ -297,6 +311,25 @@ int main()
         //c = toupper(c); // 小寫
     }
     cout << s;
+
+    return 0;
+}
+```
+### 轉16進位
+```cpp
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    const string hexdigits = "0123456789ABCDEF";
+    string result;
+    string::size_type n; // size_type -> 一種無號型別，且>=0, vector<int>::size_type n
+    while (cin >> n)
+        if (n < hexdigits.size())
+            result += hexdigits[n];
+    
+    cout << result;
 
     return 0;
 }
