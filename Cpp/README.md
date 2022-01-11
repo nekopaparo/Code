@@ -210,3 +210,43 @@ p1 = &i;
 const auto p2 = &n;
 p2 = &i; // error
 ```
+## 前置處理器(preprocessor)
+### H1.h
+```cpp
+#ifndef TEST // 尋找前置處理器是否有"TEST"變數，變數不存在時才會執行到#endif
+#define TEST // 在前置處理器中建立變數"TEST"
+#include <iostream>
+struct H1
+{
+	H1() {
+		std::cout << "H1 Hi\n";
+	}
+};
+#endif
+```
+### H2.h
+```cpp
+#ifndef TEST
+#define TEST
+#include <iostream>
+struct H2
+{
+	H2() {
+		std::cout << "H2 Hi\n";
+	}
+};
+#endif
+```
+### main.cpp
+```cpp
+#include "H1.h"
+#include "H2.h"
+int main()
+{
+    H1 h1;
+    H2 h2; // error
+    /*TEST在H1.h時被建立，
+    所以H2.h的#define...#endif被忽略執行*/
+    return 0;
+}
+```
