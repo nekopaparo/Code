@@ -104,6 +104,13 @@ n=6;
 numbers_5[n];
 numbers_5.size(); // -> Error
 ```
+```cpp
+int arr[] = { 1,2,3,4,5 };
+// int *p = arr; -> 會指向arr[0] 等同於 int *p = &arr[0];
+for (int* p = arr; p != end(arr); ++p) {
+    cout << *p;
+}
+```
 
 ## List
 ```cpp
@@ -128,7 +135,8 @@ for(auto num = nums.begin(); num != nums.end(); ++num){
 // 複製copy
 vector<int> nums_cp1(nums);
 vector<int> nums_cp2 = nums;
-
+// copy array
+vector<int> cp_array(begin(nums), end(nums));
 ```
 
 ## Obj
@@ -331,6 +339,36 @@ int main()
     
     cout << result;
 
+    return 0;
+}
+```
+
+## 迭代器 iterator
+```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
+int main()
+{   
+    vector<int> v1{1,2,3,4,5,6}; // 可以用iterator和const_iterator
+    // 可讀寫
+    for (vector<int>::iterator it = v1.begin(); it != v1.end(); ++it) {
+        cout << *it << endl;
+    }
+    const string s("Hello World"); // 只能const_iterator
+    // 只可讀取
+    for (string::const_iterator it = s.begin(); it != s.end(); ++it) {
+        cout << *it << endl;
+    }
+    // cbegin(), cend() 會回傳const_iterator
+    for (auto it = v1.cbegin(); it != v1.cend(); ++it) {
+        cout << *it << endl;
+    }
+    // 會從中間開始
+    for (auto it = v1.cbegin() + v1.size() / 2; it != v1.cend(); ++it) {
+        cout << *it << endl;
+    }
     return 0;
 }
 ```
