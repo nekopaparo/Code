@@ -97,12 +97,9 @@ to_string(i); // 整數轉字串
 int numbers_1[4]; //預設-1
 int numbers_2[] = {0, 1, 2, 3}; // 直接宣告
 int numbers_3[2][3] = {0, 1, 2, 3, 4, 5}; // 二維
-// 長度 -> 需已知空間才可使用,不然會ERROR
-numbers_4[6];
-numbers_4.size(); // -> 6
-n=6;
-numbers_5[n];
-numbers_5.size(); // -> Error
+// 長度
+size(numbers_1); // -> 4
+sizeof(numbers_1)/sizeof(*numbers_1); // -> 4
 ```
 ```cpp
 int arr[] = { 1,2,3,4,5 };
@@ -129,8 +126,8 @@ nums.empty(); // 是否為空
 #include <algorithm>
 sort(nums.begin(), nums.begin()+nums.size());
 // 從頭讀取
-for(auto num = nums.begin(); num != nums.end(); ++num){
-    cout >> *num >> endl;
+for (auto num = nums.begin(); num != nums.end(); num++) {
+    cout << *num << endl;
 }
 // 複製copy
 vector<int> nums_cp1(nums);
