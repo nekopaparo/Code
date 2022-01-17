@@ -369,3 +369,12 @@ int main()
     return 0;
 }
 ```
+## cast 強制轉型
+```cpp
+// i = (int)d;
+double d = 3.14;
+int i = static_cast<int>(d);
+// p = (char*)c;
+const char* c;
+char *p = const_cast<char*>(c);
+```
