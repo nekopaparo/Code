@@ -378,3 +378,32 @@ int i = static_cast<int>(d);
 const char* c;
 char *p = const_cast<char*>(c);
 ```
+
+## argc, argv[]
+```cpp
+#include <iostream>
+using namespace std;
+int main(int argc, char *argv[])
+{   
+    cout << "argc = " << argc << endl;
+    for (int i = 0; i < argc; i++)
+    {
+        printf("argv[%d] = %s\n", i, *argv++);
+    }
+    system("pause");
+    return 0;
+}
+```
+### 使用(cmd)
+```cmd
+path\xxx.exe -d -o test1 test2
+```
+### 輸出結果
+```cmd
+argc = 5
+argv[0] = path\xxx.exe
+argv[1] = -d
+argv[2] = -o
+argv[3] = test1
+argv[4] = test2
+```
