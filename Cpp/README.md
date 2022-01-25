@@ -138,12 +138,16 @@ vector<int> cp_array(begin(nums), end(nums));
 
 ## Obj
 ```cpp
+// class & struct
+// class 預設為 private
+// struct 預設為 public
 /*---calss---*/
 class Person {
     private:
         int age;
         double heigth;
         string gender;
+        mutable double d = 0.0;
     public:
         string name;
         Person(string name, int age, double heigth){
@@ -161,6 +165,12 @@ class Person {
                 this->gender = gender;
             }
             else this->gender = "null";
+        }
+        // const -> {} 內只能讀取不可修改class內變數
+        void func() const {
+            // this->age = age; // error
+            int age = this->age = age;
+            ++d; // mutable 在const函式中也可以進行修改
         }
 };
 /*---使用---*/
@@ -414,4 +424,17 @@ __FILE__; // 檔案名稱(字串)
 __LINE__; // 目前行號(整數)
 __TIME__; // 檔案編譯時間(字串)
 __DATE__; // 檔案編譯日期(字串)
+```
+## inline
+```cpp
+class MyClass {
+public: 
+    MyClass() = default;
+    void func1() { cout << "func1"; } // 類別內會自動inline
+    void func2();
+};
+inline // 指定inline，可用來強調是class內部函式
+void MyClass::func2() {
+    cout << "Hello";
+}
 ```
