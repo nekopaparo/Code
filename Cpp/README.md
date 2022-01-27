@@ -150,6 +150,7 @@ class Person {
         mutable double d = 0.0;
     public:
         string name;
+        Person() = default; // -> 自動初始化
         Person(string name, int age, double heigth){
             this->name = name;
             this->age = age;
