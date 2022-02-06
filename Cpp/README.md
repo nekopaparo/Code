@@ -142,47 +142,66 @@ vector<int> cp_array(begin(nums), end(nums));
 // class 預設為 private
 // struct 預設為 public
 /*---calss---*/
+#include <iostream>
+using namespace std;
 class Person {
-    private:
-        int age;
-        double heigth;
-        string gender;
-        mutable double d = 0.0;
-    public:
-        string name;
-        Person() = default; // -> 自動初始化
-        Person(string name, int age, double heigth){
-            this->name = name;
-            this->age = age;
-            this->heigth = heigth;
+public:
+    // 建構子
+    Person(string gender, int age, double heigth) : age(age), heigth(heigth) {
+        genderCheck(gender);
+        NO = ++count;
+    }
+    Person() : Person("", 0, 0.0) {}   // 委派建構子
+    Person(string gender) : Person(gender, 0, 0.0) {}
+    Person(int age) : Person("", age, 0.0) {}
+    Person(double heigth) : Person("", 0, heigth) {}
+    // 方法
+    void detail() {
+        cout << "------------------\n";
+        cout << "NO : " << NO << endl;
+        cout << "age : " << age << endl;
+        cout << "heigth : " << heigth << endl;
+        cout << "gender : " << gender << endl;
+    }
+    void genderCheck(string gender) {
+        if (gender == "男" || gender == "女") {
+            this->gender = gender;
         }
-        detail(){
-            cout << "age : " << age << endl;
-            cout << "heigth : " << heigth << endl;
-        }
-        string get() {return gender;}
-        void set(string gender) {
-            if (gender == "男" || gender == "女"){
-                this->gender = gender;
-            }
-            else this->gender = "null";
-        }
-        // const -> {} 內只能讀取不可修改class內變數
-        void func() const {
-            // this->age = age; // error
-            int age = this->age = age;
-            ++d; // mutable 在const函式中也可以進行修改
-        }
+        else this->gender = "null";
+    }
+    void func() const { // const { 只能讀取不可修改 }
+        int age = this->age; // OK
+        // this->age = age; // error
+        ++heigth;   // mutable 在const函式中也可以進行修改
+    }
+    void static pi() {
+        cout << PI << endl;
+    }
+    // 變數
+    static int count; // 非const，必須在類別外初始化
+    static constexpr double PI = 3.14;
+private:
+    int NO;
+    int age;
+    mutable double heigth;
+    string gender;
 };
-/*---使用---*/
-Person p1 = Person("Neko", 8, 140);
-cout << "name : " << p1.name << endl;
-p1.detail();
-// set
-p1.set("女"); // gender = 女
-p1.set("娚"); // gender = null
-// get
-cout << "gender : " << p1.get() << endl;
+int Person::count = 0; // static int 初始化
+```
+```cpp
+// 使用
+int main()
+{   
+    Person p1;
+    Person p2 = Person("男", 15, 175);
+    Person p3{ "女", 8, 120 };
+    
+    cout << "create Person datas -> " << Person::count << endl;
+    p1.detail();
+    p2.detail();
+    p3.detail();
+
+}
 ```
 
 # 待整理
