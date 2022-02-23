@@ -16,12 +16,15 @@ sp_attach_single_file_db
 ## 基本SQL
 ```sql
 -- 查詢資料庫
-SELECT * FROM sysdatabases 
+SELECT * 
+FROM sysdatabases 
+GO /* 分隔陳述式 = ; */
 -- 使用資料庫
 USE world
-GO /* 分隔陳述式 = ; */
+GO
 -- SHOW TABLES
-SELECT * FROM SYSOBJECTS
+SELECT * 
+FROM SYSOBJECTS
 WHERE xtype = 'U'
 GO
 -- 基本查詢
@@ -30,7 +33,7 @@ WHERE CountryCode IN ('AFG', 'NLD', 'BRA') and Population > 100000
 ORDER BY ID DESC
 GO
 
--- 別名
+-- 別名 AS 可省略
 SELECT ProductName, Price * 1.07 AS CustomerPays
 FROM Products 
 GO
