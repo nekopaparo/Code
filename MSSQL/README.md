@@ -1,5 +1,4 @@
 # SQL Server
-
 |[DATABASE](./DATABASE.md)|[TABLE](./TABLE.md)|[DATA](./DATA.md)|[KEY](./KEY.md)|[VIEW](./VIEW.md)|
 |-|-|-|-|-|
 
