@@ -1,8 +1,5 @@
 # Java
-[C#](../Csharp)|[C++](../Cpp)|[Python](../Python)|
-|-|-|-|
-
-|[多執行緒](./java/base/_Thread.java)|[SQL](./java/bean/sql)|
+|[SQL](./java/bean/sql)|[多執行緒](./java/base/_Thread.java)|
 |-|-|
 
 ## 目錄

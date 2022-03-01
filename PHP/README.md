@@ -1,24 +1,6 @@
 # PHP
-|[環境設定](./phpSet.md)|
-|-|
-
-## 時區設定(XAMPP)
-#### 1. 修改 -> ./XAMPP/php/php.ini
-##### 1.1 找到 ↓
-```ini
-[Date]
-;date.timezone= 
-```
-##### 1.2 改成指定時區
-```ini
-[Date]
-date.timezone="Asia/Taipei"
-```
-#### 2. 直接在PHP裡使用
-```php
-date_default_timezone_set("Asia/Taipei");
-```
-[PHP支援的時區表](https://www.php.net/manual/en/timezones.php)
+|[環境設定](./phpSet.md)|[時區設定](./timezone.md)|[Cookie](./Cookie)|[Session](./Session)|
+|-|-|-|-|
 
 ## 變數宣告
 ```php
