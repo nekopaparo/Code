@@ -5,6 +5,8 @@
 ## 變數宣告
 ```php
 $value = 10;
+// 刪除變數
+unset($value);
 ```
 ## 輸出
 ```php
@@ -25,10 +27,12 @@ $strs = ["peko1","peko2", "peko3"];
 // 2.
 $array = array(0, 1, 2, "peko");
 // 3.
-$name[] = "zako";
+$name = ["coco", "gura"];
+$name[] = "zako"; // 往後增加
 $name[] = "neko";
 $name[] = "peko";
-echo $name[1]; // -> neko
+echo $name[2]; // -> zako
+echo sizeof($name); // -> 5
 // 二維陣列
 $score = array(
     array(0, 1, 2),
@@ -76,4 +80,9 @@ echo $week['sunday'];
 foreach($week as $day => $dayname) {
     echo "$day is $dayname<br>";
 }
+```
+
+## 紀錄
+```php
+htmlspecialchars("<p>hi</p>"); // 純字元 
 ```
