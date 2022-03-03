@@ -24,6 +24,8 @@ $str3 = $str1." ".$str2;
 ```php
 // 1.
 $strs = ["peko1","peko2", "peko3"];
+$strs_list = ["apple" => "蘋果", "banana", "香蕉"];
+echo $strs_list["apple"]; // -> 蘋果
 // 2.
 $array = array(0, 1, 2, "peko");
 // 3.
@@ -63,11 +65,23 @@ do{
 ```
 ### foreach
 ```php
-foreach($strs as $str) {
-    echo "$str<br>";
+$week = [
+    'sunday', 'monday', 
+    'tuesday', 'wednesday', 
+    'thursday', 'friday', 
+    'saturday'
+];
+
+foreach($week as $day_num => $day) 
+{
+    echo "$day_num. $day<br>";
+}
+foreach($week as $day) 
+{
+    echo "$day<br>";
 }
 
-$week = array (
+$WEEK = array (
     'sunday' => '星期日',
     'monday' => '星期一',
     'tuesday' => '星期二', 
@@ -76,9 +90,9 @@ $week = array (
     'friday' => '星期五',
     'saturday' => '星期六'
 );
-echo $week['sunday'];
-foreach($week as $day => $dayname) {
-    echo "$day is $dayname<br>";
+foreach($WEEK as $DAY => $DAY_Name) 
+{
+    echo "$DAY is $DAY_Name<br>";
 }
 ```
 
