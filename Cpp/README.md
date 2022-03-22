@@ -106,7 +106,7 @@ for (int* p = arr; p != end(arr); ++p) {
 }
 ```
 
-## List
+## Vector
 ```cpp
 #include <vector>
 vector<int> nums;
