@@ -100,3 +100,10 @@ foreach($WEEK as $DAY => $DAY_Name)
 ```php
 htmlspecialchars("<p>hi</p>"); // 純字元 
 ```
+## 字串處理
+```php
+// 取代
+$str = "Hello World";
+$new_str = str_replace("World", "php", $str);
+echo $new_str; // -> Hello php
+```
