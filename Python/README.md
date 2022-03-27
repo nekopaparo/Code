@@ -60,7 +60,8 @@ str(i) # 整數轉字串
 
 ## Array
 ```python
-numbers_1= [0, 1, 2, 3] # 預設0
+numbers_1= [0, 1, 2, 3]
+numbers_1_1 = [0 for _ in range(3)] # -> [0, 0, 0]
 numbers_2=[range(3) for _ in range(2)] # 二維 -> [[0, 1, 2], [0, 1, 2]]
 len(numbers_1) # 長度 -> 4
 # 輸出成字串以_OAO_連接 -> "0_OAO_1_OAO_2_OAO_3"
