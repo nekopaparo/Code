@@ -1,6 +1,6 @@
 # C#
-|[SQL](./csharp/sql)|
-|-|
+|[SQL](./csharp/sql)|[SQL](./csharp/Ninject)|
+|-|-|
 
 ## 目錄
 |[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
@@ -27,6 +27,7 @@ string  s="abc";
 
 ## 字串處理
 ```csharp
+string s = @"Hi\n\t"; // 純文字輸出 -> Hi\n\t
 string str1="Hello World Zeko";
 string str2="Hi Zeko";
 // 字串長度
@@ -41,13 +42,17 @@ str1.Substring(1,3) // 擷取3個 -> "ell"
 // 字串搜尋
 str1.IndexOf(find_str); // -> no find = -1
 // 字串取代
-str1.Replace(old_str, new_str)
-// 字串為空?
-string.IsNullOrEmpty(str1)
+str1.Replace(old_str, new_str);
+// 字串為空? if str = " " 
+string.IsNullOrEmpty(str1); // False
+string.IsNullOrWhiteSpace(); // True
 // 字串轉數字
 string num = "12345";
 Convert.ToInt32(num);
 int.Parse(num);
+// 字串格式化
+int n = 1;
+string s = $"{n} + {n} = 2"; // -> 1 + 1 = 2
 ```
 
 ## 算術運算子
