@@ -3,7 +3,7 @@
 |-|-|
 
 ## 目錄
-|[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
+|[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#Vector)|[Obj](#Obj)|
 |-|-|-|-|-|-|-|
 
 ## 輸入輸出
@@ -56,6 +56,10 @@ str1.empty();
 char cs1[100] = "Hello World";
 char cs2[100];
 strcpy_s(cs2, cs1);
+// 轉數字
+string p = "3.14";
+stoi(p); // int
+stod(p); // double
 ```
 ```cpp
 // 字串分割(split)
@@ -116,12 +120,18 @@ vector<int> nums;
 
 nums.push_back(num); // 新增
 nums.at(index); list[index]; // 取值
+nums.pop_back(); // 刪除尾端
+nums.erase(nums.begin()+2); // 指定刪除
 nums.clear(); // 清空
 nums.size(); // 大小	
 nums.empty(); // 是否為空
+// 預先配置記憶體大小
+nums.reserve(20); // nums.capacity() -> 20
 // 排序 (小 -> 大)
 #include <algorithm>
-sort(nums.begin(), nums.begin()+nums.size());
+sort(nums.begin(), nums.end());
+auto u = unique(nums.begin(), nums.end()); // "連續重複"的會移到後面
+n.erase(u, n.end()); // 刪除被移到後面的
 // 從頭讀取
 for (auto num = nums.begin(); num != nums.end(); num++) {
     cout << *num << endl;
@@ -129,8 +139,19 @@ for (auto num = nums.begin(); num != nums.end(); num++) {
 // 複製copy
 vector<int> nums_cp1(nums);
 vector<int> nums_cp2 = nums;
+vector<int> nums_cp3;
+copy(nums.cbegin(), nums.cend(), nums_cp3);
 // copy array
 vector<int> cp_array(begin(nums), end(nums));
+
+// 對調
+vector<int> n1 = { 1,2,3,4,5 };
+vector<int> n2 = { 1,2,3 };
+swap(n1, n2);
+
+// 插入 (除了list外，建議不要使用insert)
+vector<int> n3 = { 1,2,3 };
+n3.insert(n3.begin() + 1, 10); // -> 1, 10, 2, 3
 ```
 
 ## Obj
