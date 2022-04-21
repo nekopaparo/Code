@@ -1,5 +1,5 @@
 # C#
-|[SQL](./csharp/sql)|[SQL](./csharp/NinjectSample)|
+|[SQL](./csharp/sql)|[Ninject](./csharp/NinjectSample)|
 |-|-|
 
 ## 目錄
