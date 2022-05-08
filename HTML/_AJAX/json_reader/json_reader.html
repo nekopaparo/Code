@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.json reader</title>
+</head>
+<script>
+    // 讀取json
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open('GET', "data.json", true);
+    xmlHttp.responseType = 'json';
+    xmlHttp.send();
+    xmlHttp.onload = function () {
+        document.getElementById("version").textContent += xmlHttp.response['version'];
+        
+        var Persons = xmlHttp.response['Person'];
+        // 透過檢查 HTML template 元素屬性的存在與否，以測試瀏覽器是否支援它
+        if ('content' in document.createElement('template')) {
+            var tmp = document.querySelector('#data');
+            // 模板客製化的目標
+            var tmp_target = tmp.content.querySelectorAll("div div");
+            // 模板建立完後，要插入的位置
+            var insert_path = document.querySelector("#home");
+            Persons.forEach(function (item){
+                // 以模板來實例化表格
+                tmp_target[0].textContent = `姓名 : ${item.name}`;
+                tmp_target[1].textContent = `年齡 : ${item.age}`;
+                // 複製新的並將其新增至insert
+                var clone = document.importNode(tmp.content, true);
+                insert_path.appendChild(clone);
+            });
+        } else {
+        // 因為 HTML template 不被支援，所以要用其他方法在表格增加新行
+        }
+    };
+</script>
+<body>
+    <div id="home" style="display: inline-block;">
+        <div id="version">version : </div>
+    </div>
+    <template id="data">
+        <div style="border: rgb(0, 0, 0) solid 1px;">
+            <div></div>
+            <div></div>
+        </div>
+    </template>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<style>
+    header {
+        height: 30px;
+    }
+    .time-home {
+        display: flex;
+        font-size: 10px;
+        
+    }
+/*------------------------------*/
+    header, .nav-home {
+        display: flex;
+        height: min-content;
+    }    
+    .nav-main, .nav-sub {
+        z-index: 1;
+        height: min-content;
+        cursor: context-menu;
+        background-color: white;
+    }
+    .nav-main {
+        z-index: 1;
+        display: inline-block;
+        position: relative;
+    }
+    .nav-sub {
+        z-index: 2;
+        display: none;
+        position: absolute;
+    }
+    .nav-main:hover, .nav-a:hover {
+        background-color: burlywood;
+    }
+    .nav-main, .nav-a {
+        border: 1px black solid;
+    }
+</style>
+<script src="js/jquery-3.6.0.js"></script>
+<script>
+    var nowNavMainIndex;
+    function navScondeOpen(e) {
+        if(e) {
+            nowNavMainIndex = $(".nav-main").index(e);
+            console.log(nowNavMainIndex)
+        }
+        document.getElementsByClassName("nav-sub")[nowNavMainIndex].style.display='block';
+    }
+    function navScondeClose() {
+        document.getElementsByClassName("nav-sub")[nowNavMainIndex].style.display='none';
+    }
+    window.onload = function () {
+        for(var i=0; i<$(".nav-main").length; i++){
+            $(".nav-sub")[i].style.left = $(".nav-main")[i].offsetLeft + $(".nav-main")[i].offsetWidth + "px";
+        }
+    }
+</script>
+<body>
+    <header>
+        <div class="nav-home">
+            <div class="nav-main" onmouseover="navScondeOpen(this)" onmouseleave="navScondeClose()">main</div>
+            <div class="nav-sub" onmouseover="navScondeOpen()" onmouseleave="navScondeClose()">
+                <div class="nav-a"><a href="#">Contact0</a></div>
+                <div class="nav-a"><a href="#">Contact1</a></div>
+                <div class="nav-a"><a href="#">Contact2</a></div>
+            </div>
+        </div>
+        <div class="nav-home">
+            <div class="nav-main" onmouseover="navScondeOpen(this)" onmouseleave="navScondeClose()">main</div>
+            <div class="nav-sub" onmouseover="navScondeOpen()" onmouseleave="navScondeClose()">
+                <div class="nav-a"><a href="#">Contact0</a></div>
+                <div class="nav-a"><a href="#">Contact1</a></div>
+                <div class="nav-a"><a href="#">Contact2</a></div>
+            </div>
+        </div>
+    </header>
+    <footer>
+        <div class="time-home">
+            <div id="nowtime"></div>
+            <div>&nbsp;GMT+0800 (台北標準時間)</div>
+        </div>
+    </footer>
+</body>
+<script>
+    function timeRun(){
+        nowtime.innerText = new Date(Date.now()+8*1000*60*60).toUTCString().slice(12,25);
+        setTimeout(timeRun,1000);
+    }
+    nowtime.innerText = new Date(Date.now()+8*1000*60*60).toUTCString().slice(12,25);
+    setTimeout(timeRun,1000 - Date.now() % 1000);
+</script>
+</html>

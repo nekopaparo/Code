@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+<style>
+    .cookie {
+        width: 10cm;
+        border: 1px black solid;
+    }
+    .user-input {
+        width: 10cm;
+        display: flex;
+        border: 1px black solid;
+    }
+    .user-input * {
+        width: 50%;
+    }
+    #cookiesData {
+        width: 10cm;
+        border: 1px black solid;
+    }
+</style>
+<script src="Cookie.js"></script>
+<script>
+    //cookieAge = 60;
+    //顯示cookie
+    function showCookie(){
+        const cookies = document.cookie.replace(/;\s/g, "<br>");
+        cookiesData.innerHTML = cookies;
+    }
+</script>
+<body>
+    <div class="cookie">
+        <div class="user-input">
+            <input id="cookieName" type="text" placeholder="cookieName">
+            <input id="cookieValue" type="text" placeholder="cookieValue">
+        </div>
+        <div class="user-input">
+            <input type="button" value="顯示cookie" onclick="showCookie()">
+            <input type="button" value="新增cookie" onclick="myCookie.add(cookieName.value, cookieValue.value); showCookie()">
+            <input type="button" value="指定cookie" onclick="console.log(myCookie.get(cookieName.value, 'cc'))">
+            <input type="button" value="刪除cookie" onclick="myCookie.remove(cookieName.value); showCookie()">
+        </div>
+    </div>
+    <div id="cookiesData"></div>
+    
+</body>
+</html>

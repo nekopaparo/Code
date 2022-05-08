@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>how to use template</title>
+</head>
+<body>
+    <div id="home" style="display: inline-block;">
+        <div>template</div>
+    </div>
+    <template id="data">
+        <div style="border: rgb(0, 0, 0) solid 1px;">
+            <div></div>
+            <div></div>
+        </div>
+    </template>
+</body>
+<script>
+    // 透過檢查 HTML template 元素屬性的存在與否，以測試瀏覽器是否支援它
+    if ('content' in document.createElement('template')) {
+        var tmp = document.querySelector('#data');
+        // 模板客製化的目標
+        var tmp_target = tmp.content.querySelectorAll("div div");
+        // 模板建立完後，要插入的位置
+        var insert_path = document.querySelector("#home");
+        
+        var clone = null;
+
+        // 以模板來實例化表格
+        // tmp data
+        tmp_target[0].textContent = "姓名 : 小貓";
+        tmp_target[1].textContent = "年齡 : 3";
+        // 複製新的並將其新增至insert_path
+        clone = document.importNode(tmp.content, true);
+        insert_path.appendChild(clone);
+        // tmp data
+        tmp_target[0].textContent = "姓名 : 小狗";
+        tmp_target[1].textContent = "年齡 : 8";
+        // 複製新的並將其新增至insert_path
+        clone = document.importNode(tmp.content, true);
+        insert_path.appendChild(clone);
+        
+    } else {
+    // 因為 HTML template 不被支援，所以要用其他方法在表格增加新行
+    }
+</script>
+</html>

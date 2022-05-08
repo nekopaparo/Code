@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view and cute</title>
+</head>
+<link rel="stylesheet" href="imgCropper.css"/>
+<script src="imgCropper.js"></script>
+<body>
+    <!--預覽和切割圖片-->
+    <div id="imgCropper">
+        <div id="img-input">
+            <input id="imgInput" type="file" accept="image/*"/>
+        </div>
+        <!--預覽-->
+        <div id="img-view">
+            <div id="img-cute-range" tabindex="0"></div><!--裁切範圍-->
+            <img id="imgView" src="#" alt="your image"/>
+        </div>
+        <!--放大-->
+        <div id="img-size-range">
+            <input id="imgSizeRange" type="range" step="0.01" min="0.01" max="1.00" value="0.20" aria-label="zoom"/>
+        </div>
+        <div id="img-cute-result">
+            <input id="imgCropperResult" type="button" value="輸出"/>
+        </div>
+        <canvas id="canvas" width="150" height="150"></canvas>
+    </div>
+    <!--輸出結果圖-->
+    <div style="display: flex;">
+        <div>
+          <p style="text-align: center;">結果圖</p>
+          <img id="newImg" width="150" height="150"/>
+        </div>
+    </div>
+    <input name="imgCuteServer" type="hidden">
+</body>
+</html>

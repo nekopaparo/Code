@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var xmlHTTP = new XMLHttpRequest();
+        var url = "getPost.php";
+        xmlHTTP.open("POST", url); // GET | POST
+        xmlHTTP.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlHTTP.send("name=小貓"); // 可放想要傳送的value
+        // 讀取完觸發(state = 4)
+        xmlHTTP.onload = function(){
+            // do something
+            document.write(xmlHTTP.response);
+        }
+    </script>
+    <a href=""></a>
+</body>
+</html>
