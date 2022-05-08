@@ -2,7 +2,7 @@
 |SQL|use|include|lib|位置|環境設定|
 |-|-|-|-|-|-|
 |[MySQL](./MySQL.cpp)|libmysql.h<br>libmysql.lib<br>libmysql.dll|.\include\\*|.\lib\\*|.\MySQL\MySQL Server 8.0|[Visual Studio 2019](./mysqlSet.md)|
-|[SQLite](./MySQLite.cpp)|sqlite3.h<br>[sqlite3.lib](./buildlib.md)<br>sqlite3.dll|sqlite-tools-win32-x86-xxxxxxx.zip|sqlite-dll-win64-x64-xxxxxxx.zip|[download](https://sqlite.org/download.html)<br>(Precompiled Binaries for Windows)|同上|
+|[SQLite](./MySQLite.cpp)|sqlite3.h<br>[sqlite3.lib](./buildlib.md)<br>sqlite3.dll|sqlite-amalgamation-xxxxxxx.zip|sqlite-dll-win64-x64-xxxxxxx.zip|[download](https://sqlite.org/download.html)<br>(Precompiled Binaries for Windows)|同上|
 
 
 # code use
