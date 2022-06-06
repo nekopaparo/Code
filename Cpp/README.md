@@ -15,7 +15,6 @@ cin >> s;
 
 cout << n+1 << endl; // endl -> \n
 cout << s<< endl;
-cou
 ```
 
 ## 變數
