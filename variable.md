@@ -1,7 +1,11 @@
-# Variable
+# Variable (變數)
 ### 指定的值超出變數長度
 * 超出範圍外的值，結果會是undefined。
 * 程式可能表面上可以運作，也可能當掉或產生沒有用的值。
+
+轉型
+~ (int)'a' -> 97
+~ (char)97 -> 'a'
 
 ### 1. 整數
 通常預設是 signed
@@ -56,3 +60,12 @@
 強調型態
 ~ float ->  3.14F or 3.14f
 ~ double -> 3.14D or 3.14d
+
+### 3. 字元
+char c = 'a'
+~ 預設 -> unsigned, 長度 8 bit
+~ 中文字元 16 bit -> 常用 UTF-8 作為編碼
+
+string (字串)
+~ string str = "Hello"
+~ 等同 -> char str[] = "Hello";
