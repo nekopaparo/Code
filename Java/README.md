@@ -5,29 +5,55 @@
 ## 目錄
 |[輸入輸出](#輸入輸出)|[變數](#變數)|[字串處理](#字串處理)|[算術運算子算](#算術運算子)|[Array](#Array)|[List](#List)|[Obj](#Obj)|
 |-|-|-|-|-|-|-|
-
+## base
+```java
+public class FileName // FileName.java
+{
+	public static void main(String[] args)
+	{
+		System.out.println("Hello world");
+	}
+}
+```
 ## 輸入輸出
 ```java
 import java.util.Scanner;
-Scanner scn =new Scanner(System.in);
-int n = scn.nextInt();
-String s = scn.next();
-String line = scn.nextLine();
 
-System.out.println("n: " + n); //換行
-System.out.print("n: " + n);
+public class Scan
+{
+	public static void main(String[] args)
+	{
+	// 輸入
+		Scanner scn = new Scanner(System.in);
+		// 讀到空白
+		int i = scn.nextInt();
+		double d = scn.nextDouble();
+		String word = scn.next();
+		// 讀取整行 (讀到換行符號\n)
+		String line = scn.nextLine();
+        // *輸入結束時要關閉
+		scn.close();
+	// 輸出
+		System.out.print(word + '\n'); // \n = 換行
+		System.out.println(line); // 輸出完換行
+		System.out.printf("%02d, %.3f\n", i, d); // 格式化輸出
+	}
+}
 ```
 
 ## 變數
 ```java
-int i=0;
-long l=0L;
-float f=0.0F;
-double d=0.0;
-char c='a';
-String s="abc";
-(int)'a'; //=97
-(char)97; //='a'
+// java 沒有 signed / unsigned
+// 變數可用class來宣告
+Integer I = 0; // = new Integer(0);
+int i = 0; // 大小 32 bit
+byte b = 0; // -128 ~ 127 (8 bit)
+// java不是預設(int, double)時要寫強調
+long l = 0L; 
+float f = 0.0F;
+char c = 0; // 0 ~ 65535 (16 bit)
+// java的字串是class
+String s = "abc";
 ```
 
 ## 字串處理
@@ -49,6 +75,13 @@ str1.indexOf(find_str); // -> no find = -1
 str1.replace(old_str, new_str);
 // 字串為空?
 str1.isEmpty();
+// 轉數字
+String iStr = "123456";
+int i = Integer.parseInt(iStr);
+// 字串格式化
+int n = 1;
+// result = "1 + 1 = 2"
+String result = String.format("%d + %d = %d", n, n, n+n);
 ```
 
 ## 算術運算子
@@ -71,61 +104,69 @@ int[] numbers_1 = new int[4]; // 預設0
 int[] numbers_2 = {0, 1, 2, 3}; // 直接宣告
 int[][] numbers_3 = new int[2][3]; // 二維
 numbers_1.length; // 長度 -> 4
-numbers_2.join("_OAO_", array);	// 輸出成字串以_OAO_連接 -> 0_OAO_1_OAO_2_OAO_3
+// 輸出成字串以_OAO_連接 -> 0_OAO_1_OAO_2_OAO_3
+numbers_2.join("_OAO_", array);
 ```
 
 ## List
 ```java
 import java.util.ArrayList;
-ArrayList<Integer> nums=new ArrayList<Integer>();
-nums.add(num); // 新增
-nums.get(index); // 取值
-nums.remove(index); // 刪除
-nums.clear(); // 清空
-nums.size(); // 大小	
-nums.toArray(String[]::new); // 轉陣列
-nums.isEmpty(); // 是否為空
-```
-```java
-// 排序 (小 -> 大)
 import java.util.Collections;
-Collections.sort(nums);
+
+public class ListSample
+{
+	public static void main(String[] args)
+	{
+		ArrayList<Integer> nums = new ArrayList<Integer>();
+		nums.add(num); // 新增
+		nums.get(index); // 取值
+		nums.remove(index); // 刪除
+		nums.clear(); // 清空
+		nums.size(); // 大小	
+		nums.toArray(String[]::new); // 轉陣列
+		nums.isEmpty(); // 是否為空
+		// 排序 (小 -> 大)
+		Collections.sort(nums);
+	}
+}
 ```
 
 ## Obj
 ```java
-/*---calss---*/
-class Person{
+class Person
+{
+    // 變數
     public String name;
-    private int age;
-    private double heigth;
-    private String gender;
-    public Person(String name, int age, double heigth){
+    private int age; // private -> 無法從外部進行存取
+    // 建構子 1
+    public Person()
+    {
+    	this.name = null;
+        this.age = -1;
+    }
+    // 建構子 2
+    public Person(String name, int age)
+    {
         this.name = name;
         this.age = age;
-        this.heigth = heigth;
     }
-    public void detail(){
+    // 方法 1
+    public void detail()
+    {
+    	System.out.println("name : " + name);
         System.out.println("age : " + age);
-        System.out.println("heigth : " + heigth);
-        System.out.println("gender : " + gender);
     }
-    public String get() {return gender;}
-    public void set(String gender) {
-        if (gender == "男" || gender == "女"){
-            this.gender = gender;
-        }
-        else this.gender = null;
+    // 方法 2
+    public void setAge(int newAge)
+    {
+    	this.age = newAge;
     }
 }
-
-/*---使用---*/
-Person p1 = new Person("Neko", 8, 140);
-System.out.println(p1.name);
+```
+```java
+Person p1 = new Person("Neko", 8);
 p1.detail();
-// set
-p1.set("女"); // gender = 女
-p1.set("娚");; // gender = null
-// get
-System.out.println(p1.get());
+Person p2 = new Person();
+p2.setAge(10);
+p2.detail();
 ```
