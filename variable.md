@@ -3,14 +3,14 @@
 * 超出範圍外的值，結果會是undefined。
 * 程式可能表面上可以運作，也可能當掉或產生沒有用的值。
 
-轉型
-~ (int)'a' -> 97
-~ (char)97 -> 'a'
+*轉型*
++ (int)'a' -> 97
++ (char)97 -> 'a'
 
 ### 1. 整數
-通常預設是 signed
-~ signed char = -128 ~ 127
-~ unsigned char = 0 ~ 255
+*通常預設是 signed*
++ signed char = -128 ~ 127
++ unsigned char = 0 ~ 255
 
 |型別(type)|位元(bit)長度|範圍|
 |-|-|-|
@@ -20,27 +20,27 @@
 |long|32|-2147483648 ~ 2147483647|
 |long long|64|
 
-強調型態
-~ long -> 10L or 10l 
-~ long long -> 10LL or 10ll
+*強調型態*
++ long -> 10L or 10l 
++ long long -> 10LL or 10ll
 
 ### byte(位元組)
 #### 1 byte = 8 bit
-4種表示法
-~ + Decimal (10進位) - 預設
-~ + Binary (2進位) - 開頭為 0b / 0B
-~ + 0b111 = 7
-~ +  0B10 = 2
-~ Octal (8進位) - 開頭為 0 
-~ + 022 = 18 
-~ Hexadecimal (16進位) - 開頭為 0x / 0X
-~ + 0x1A = 26
-~ + 0X2B = 43
+*4種表示法*
++ Decimal (10進位) - 預設
++ Binary (2進位) - 開頭為 0b / 0B
++ + 0b111 = 7
++ + 0B10 = 2
++ Octal (8進位) - 開頭為 0 
++ + 022 = 18 
++ Hexadecimal (16進位) - 開頭為 0x / 0X
++ + 0x1A = 26
++ + 0X2B = 43
 
-位元運算子 (左結合)
-~ + 正負號位元的運算處理可能有所不同，所以建議使用 unsigned
-~ + 左(右)位移時，超出尾端位元會被捨棄
-~ + 左位移超出時可能會進行型別提升 (8 bit -> 16 bit)
+*位元運算子 (左結合)*
++ 正負號位元的運算處理可能有所不同，所以建議使用 unsigned
++ 左(右)位移時，超出尾端位元會被捨棄
++ 左位移超出時可能會進行型別提升 (8 bit -> 16 bit)
 
 |運算子|功能|a = 0b10101010, b = 0b01001001|
 |-|-|-|
@@ -57,15 +57,15 @@
 |float|32|10^-38 ~ 10^38|
 |double (預設)|64|10^-308 ~ 10^308|
 
-強調型態
-~ float ->  3.14F or 3.14f
-~ double -> 3.14D or 3.14d
+*強調型態*
++ float ->  3.14F or 3.14f
++ double -> 3.14D or 3.14d
 
 ### 3. 字元
-char c = 'a'
-~ 預設 -> unsigned, 長度 8 bit
-~ 中文字元 16 bit -> 常用 UTF-8 作為編碼
+*char c = 'a'*
++ 預設 -> unsigned, 長度 8 bit
++ 中文字元 16 bit -> 常用 UTF-8 作為編碼
 
-string (字串)
-~ string str = "Hello"
-~ 等同 -> char str[] = "Hello";
+*string (字串)*
++ string str = "Hello"
++ 等同 -> char str[] = "Hello";
