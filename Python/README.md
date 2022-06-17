@@ -15,10 +15,10 @@ print("N: "+ N)
 
 ## 變數
 ```python
-i=0
-d=0.0
-str_="abc"
-b=True # False
+i = 0
+d = 0.0
+str_ = "abc"
+b = True # False
 ord('a') # 97
 chr(97) # 'a'
 ```

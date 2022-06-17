@@ -26,23 +26,10 @@ printf("%d %f %c %s", 10, 3.14, X, "Hello C");
 
 ## 變數
 ```c
-// 整數, 可用 unsigned -> 無號(無負號)
-int i = 0;
-long l = 0;
-short s = 0; // -32768 ~ 32767
-unsigned short us = 0; // 0 ~ 65535
-// 浮點數
-float f = 0.0;
-double d = 0.0;
-// 字元
-char c='a';
 // string
 // 字串結尾為\0, 不寫系統會自動補上
 char str1 [] = "string\0";
 char *str2 = "string";
-// 轉型
-(int)'a'; //=97
-(char)97; //='a'
 ```
 
 ## 字串處理

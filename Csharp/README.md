@@ -15,14 +15,7 @@ System.Console.WriteLine(s); // Line = "\n"
 
 ## 變數
 ```csharp
-int     i=0;
-long    l=0;
-float   f=0.0;
-double  d=0.0;
-char    c='a';
-string  s="abc";
-(int)'a'; //=97
-(char)97; //='a'
+string s="abc";
 ```
 
 ## 字串處理
@@ -33,7 +26,7 @@ string str2="Hi Zeko";
 // 字串長度
 str.Length;
 // false 字串比較
-str1.compare(str2) //相同 -> 0, 不同 -> -1
+str1.Compare(str2) //相同 -> 0, 不同 -> -1
 str1==str2;
 // 字串分割(split)
 str1.Split(" ", 2)
