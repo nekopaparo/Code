@@ -26,7 +26,6 @@ void getTime(int *output) {
     output[0] = tm->tm_hour;
     output[1] = tm->tm_min;
     output[2] = tm->tm_sec;
-
 }
 void reflash(int *time) {
     printf ("%02d:%02d:%02d\n", time[0], time[1], time[2]);
