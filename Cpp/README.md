@@ -1,5 +1,5 @@
 # Cpp
-|[SQL](./cpp/sql)|[檔案讀寫](./cpp/base/_fstream.cpp)|
+|[SQL](./cpp/sql)|[檔案讀寫](./cpp/base/file.md)|
 |-|-|
 
 ## 目錄
@@ -19,14 +19,9 @@ cout << s<< endl;
 
 ## 變數
 ```cpp
-int     i=0;
-long    l=0;
-float   f=0.0;
-double  d=0.0;
-char    c='a';
-string s="abc";
-(int)'a'; //=97
-(char)97; //='a'
+string s = "abc";
+char cs[100] = "def";
+char *pcs = "ghi";
 ```
 
 ## 字串處理
