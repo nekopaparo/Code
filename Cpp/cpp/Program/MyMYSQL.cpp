@@ -1,10 +1,16 @@
 #include "MyMYSQL.h"
 
+SQL::MyMYSQL::MyMYSQL(USER* user)
+{
+	mysql = new MYSQL();
+	this->user = user;
+}
 SQL::MyMYSQL::MyMYSQL(const char* host, const char* user, const char* password, const char* dbName,
 	int port, const char* unix_socket, long client_flag)
 {
 	mysql = new MYSQL();
-	setUserData(host, user, password, dbName, port, unix_socket, client_flag);
+	this->user = new SQL::USER { host, user, password, dbName,
+									port, unix_socket, client_flag };
 }
 SQL::MyMYSQL::~MyMYSQL()
 {
@@ -14,14 +20,14 @@ void SQL::MyMYSQL::setUserData(const char* host, const char* user, const char* p
 	int port, const char* unix_socket, long client_flag)
 {
 	//使用者設定
-	this->host = host;
-	this->user = user;
-	this->password = password;
-	this->dbName = dbName;
+	this->user->host = host;
+	this->user->user = user;
+	this->user->password = password;
+	this->user->dbName = dbName;
 	//可用預設
-	this->port = port;
-	this->unix_socket = unix_socket;
-	this->client_flag = client_flag;
+	this->user->port = port;
+	this->user->unix_socket = unix_socket;
+	this->user->client_flag = client_flag;
 }
 // load connect
 void SQL::MyMYSQL::loadConnect()
@@ -30,7 +36,8 @@ void SQL::MyMYSQL::loadConnect()
 	{
 		std::cout << mysql_error(mysql) << std::endl;
 	}
-	else if (mysql_real_connect(mysql, host, user, password, dbName, port, unix_socket, client_flag) == 0)
+	else if (mysql_real_connect(mysql, user->host, user->user, user->password, user->dbName,
+											user->port, user->unix_socket, user->client_flag) == 0)
 	{
 		std::cout << mysql_error(mysql) << std::endl;
 	}

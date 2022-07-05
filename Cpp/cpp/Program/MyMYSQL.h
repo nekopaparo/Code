@@ -9,12 +9,8 @@
 
 namespace SQL
 {
-	class MyMYSQL
+	struct USER
 	{
-	private:
-
-		MYSQL* mysql;
-
 		//使用者設定
 		const char* host;
 		const char* user;
@@ -24,8 +20,17 @@ namespace SQL
 		int port;
 		const char* unix_socket;
 		long client_flag;
+	};
+	class MyMYSQL
+	{
+	private:
+
+		MYSQL* mysql;
+
+		USER* user;
 
 	public:
+		MyMYSQL(USER* user);
 		MyMYSQL(const char* host, const char* user, const char* password, const char* dbName, int port = 0, const char* unix_socket = (const char*)0, long client_flag = 0L);
 		~MyMYSQL();
 		// user data
