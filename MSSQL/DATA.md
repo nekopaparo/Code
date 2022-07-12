@@ -3,7 +3,7 @@
 |-|-|-|-|-|
 
 ```sql
-#表格資訊(相關設定)
+-- 表格資訊(相關設定)
 EXEC sp_columns Products 
 GO
 ```
