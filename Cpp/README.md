@@ -112,6 +112,8 @@ vector<int> nums;
 // vector<int> nums(10, -1); // (數量, 初始值) 
 // nums = {4,5,6}; //會覆蓋原本的
 
+vector<vector<int>> numss; // 二維
+
 nums.push_back(num); // 新增
 nums.at(index); list[index]; // 取值
 nums.pop_back(); // 刪除尾端
@@ -470,3 +472,47 @@ void MyClass::func2() {
     cout << "Hello";
 }
 ```
+
+## thread
+```cpp
+// cli_winform
+System::Threading::ThreadStart ts = gcnew System::Threading::ThreadStart(this, &Form1::func);
+System::Threading::Thread^ t1 = gcnew System::Threading::Thread(ts);
+t1->Start();
+t1->Join();
+```
+//
+## System::String^ & std::string
+```cpp
+// https://dotblogs.com.tw/v6610688/2014/01/07/std_string_to_cli_system_string
+
+//System::String^ to std::string
+String^ str = gcnew String(os.c_str());
+
+const char* chars = (const char*)(System::Runtime::InteropServices::Marshal::StringToHGlobalAnsi(source)).ToPointer();
+string dest = chars;
+```
+
+```c#
+but_自定路徑_選資料夾.Click += (sender, e) => {
+
+    var dialog = new FolderSelectDialog {
+    //InitialDirectory = musicFolderTextBox.Text,
+    Title = "Select a folder"
+    };
+    if (dialog.Show()) {
+        text_自定儲存路徑.Text = dialog.FileName;
+        radio_儲存路徑_自定.IsChecked = true;
+    }
+};
+```
+
+## datagridview
+
+* AutoSizeColumnsMode -> 寬度自動化設定
+* ColumnHeadersDefaultCellStyle -> 內容相關格式設定
+
+## form
+* this->MaximizeBox = true -> 放大按鈕
+
+* FormBorderStyle = FixedSingle -> 邊寬相關格式(取消拖拉大小)
