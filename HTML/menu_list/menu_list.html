@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.menu
+{
+    height: 25px;
+    width: 100px;
+    overflow: hidden;
+}
+.menu:hover
+{
+    overflow: visible;
+}
+.menu:hover .menu-title
+{
+    text-decoration: underline;
+}
+.menu-title
+{
+    height: 100%;
+    width: max-content;
+}
+.menu-items
+{
+    width: 200px;
+    border: 1px solid gainsboro;
+    background-color: white;
+}
+.div-a
+{
+    cursor: pointer;
+}
+.div-a:hover
+{
+    text-decoration: underline;
+}
+.div-a a
+{
+    text-decoration: none;
+}
+.div-a a:visited
+{
+    color: #000;
+}
+</style>
+<body>
+
+<div id="nav" style="display: flex; align-items: flex-end;">
+    <template id="tmp_menu">
+        <div class="menu">
+            <div class="menu-title div-a">title</div>
+            <div class="menu-items">
+            <template id="tmp_menuItiem">
+                    <div class="menu-item div-a"><a href=".">item</a></div>
+                </template>
+            </div>
+        </div>
+    </template>
+</div>
+
+</body>
+<script>
+// 讀取json
+var readJson = new XMLHttpRequest();
+    readJson.open('GET', "data.json", true);    
+    readJson.responseType = 'json';
+
+    readJson.send();
+
+var menu = document.querySelector('#tmp_menu');
+var menuItems = menu.content.querySelector('.menu-items');
+var menuItem = menu.content.querySelector('#tmp_menuItiem');
+
+readJson.onload = function ()
+{
+    const nav = readJson.response['nav'];
+   
+    nav.forEach(function (item, index)
+    {
+        // title
+        menu.content.querySelector('.menu-title').textContent = item['title'];
+        // item
+        menuItems.innerHTML = "";
+        item['items'].forEach(function (item, index)
+        {
+            menuItem.content.querySelector('a').textContent = item['item'];
+            menuItem.content.querySelector('a').href = item['href'];
+            menuItems.appendChild(document.importNode(menuItem.content, true));
+        });
+        document.querySelector('#nav').appendChild(document.importNode(menu.content, true));
+    });
+}
+</script>
+</html>
