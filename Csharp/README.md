@@ -15,6 +15,7 @@ System.Console.WriteLine(s); // Line = "\n"
 
 ## 變數
 ```csharp
+uint i = 0; // = unsigned int
 string s="abc";
 ```
 
@@ -72,7 +73,26 @@ numbers_1.Length; // 長度
 
 ## List
 ```csharp
-// 待更新
+using System.Collections.Generic; // List
+
+List<string> list = new List<string> { "Hi", "Cshap", "List", "Hi" };
+//List<string> list = new List<string>();
+list.Add("New Value"); // 尾端新增
+list.AddRange(new []{ "value1", "value2", "value1" });
+list.Insert(2, "Insert"); // 插入 => list[2] = "Insert"
+list.IndexOf("List"); // 搜尋 = 2
+list.Sort(); // 排序
+list.BinarySearch("List"); // 搜尋，要先排序才能用
+// cmd顯示
+list.ForEach(delegate (string item)
+{
+    Console.WriteLine(item);
+});
+string[] array = list.ToArray(); // 輸出陣列
+int size = list.Count; // size
+list.Remove("Hi"); // 刪除第一個符合的
+list.RemoveAt(0); // 刪除第一個
+list.Clear(); // 清空
 ```
 
 ## Obj
