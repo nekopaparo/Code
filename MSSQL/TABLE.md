@@ -16,6 +16,9 @@ CREATE TABLE Products
    Price money NULL,  
    ProductDescription varchar(max) NULL)  
 GO
+-- 複製新資料表
+SELECT * INTO new_table_name
+FROM table_name
 ```
 ##### TEMPORARY
 ```sql
@@ -68,4 +71,12 @@ GO
 ```sql
 DROP TABLE Products
 GO
+```
+
+### 索引
+```sql
+-- 唯一值，允許多個NULL
+CREATE UNIQUE NONCLUSTERED INDEX IX_FPH_MEMBER
+ON FPHMember(SellerID)
+WHERE SellerID IS NOT NULL;
 ```

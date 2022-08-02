@@ -6,6 +6,9 @@
 |-|-|
 
 
+## 開起/關閉資料庫變動權限
++ 工具 -> 選項 -> 設計師 -> 防止儲存需要資料表重建的變更
+
 ## 無ldf檔時的匯入方法
 ```sql
 sp_attach_single_file_db
@@ -31,7 +34,10 @@ SELECT * FROM City
 WHERE CountryCode IN ('AFG', 'NLD', 'BRA') and Population > 100000
 ORDER BY ID DESC
 GO
-
+-- LIMIT
+SELECT TOP 10 *
+FROM City
+GO
 -- 別名 AS 可省略
 SELECT ProductName, Price * 1.07 AS CustomerPays
 FROM Products 
