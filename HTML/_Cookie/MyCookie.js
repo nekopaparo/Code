@@ -7,10 +7,10 @@
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
     (global = global || self, (function () {
-      var current = global.MyCookies;
-      var exports = global.MyCookies = factory();
+      var current = global.MyCookie;
+      var exports = global.MyCookie = factory();
       exports.noConflict = function () { 
-            global.MyCookies = current; 
+            global.MyCookie = current; 
             return exports; 
         };
     }()));
@@ -18,10 +18,10 @@
     'use strict';
     // 可在這邊加密
     var defaultConverter = {
-        read: function (value) {
+        read : function (value) {
           return value;
         },
-        write: function (value) {
+        write : function (value) {
           return value;
         }
     };
@@ -42,7 +42,7 @@
 //        SameSite : 'lax', // strict > lax >>>>>> none(允許第三方)
     }
     // 串接
-    function assign () {
+    function assign() {
         var target = {};
         for (var i = 0; i < arguments.length; ++i) {
             var source = arguments[i];
@@ -53,28 +53,29 @@
         return target;
     }
     // main
-    function init (converter, defaultAttributes)
+    function init(converter, defaultAttributes)
     {
-        function get (key)
+        function get(key)
         {
             if (typeof document === 'undefined' || (arguments.length && !key)) {
                 return
             }
 
-            var cookies = document.cookie ? document.cookie.split(';') : [];
-            var jar = {};
+            let cookies = document.cookie ? document.cookie.split("; ") : [];
+            let jar = {};
 
-            cookies.forEach(function (cookie) {
-                var parts = cookie.split('=');
+            for(let i = 0; i < cookies.length; ++i)
+            {
+                let parts = cookies[i].split('=');
                 try {
                     jar[parts[0]] = converter.read(parts[1]);
                 } catch (e) {}
-            });
+            }
             
             return key ? jar[key] : jar;
         }
 
-        function set (key, value, attributes)
+        function set(key, value, attributes)
         {
             if (typeof document === 'undefined') {
                 return
@@ -103,10 +104,10 @@
                     })
                 );
             },
-            withAttributes: function (attributes) {
+            withAttributes : function (attributes) {
                 return init(this.converter, assign(this.attributes, attributes))
             },
-            withConverter: function (converter) {
+            withConverter : function (converter) {
                 return init(assign(this.converter, converter), this.attributes)
             }
         },

@@ -7,10 +7,10 @@
 'use strict';
 // 可在這邊加密
 var defaultConverter = {
-    read: function (value) {
+    read : function (value) {
       return value;
     },
-    write: function (value) {
+    write : function (value) {
       return value;
     }
 };
@@ -20,7 +20,7 @@ var defaultAttributes = {
     path : '/',
     // 有效期限
 //    expires : 'Tue, 19 Jan 2038 03:14:07 GMT',  // new Date().toUTCString()
-//    'max-age' : 10, // 從設定開始算之後幾秒之內 cookie 是有效的
+    'max-age' : 10, // 從設定開始算之後幾秒之內 cookie 是有效的
     // 共用網域.預設值是當前網域
 //    domain : 'github.com',
     // cookie 只能透過 https 傳遞
@@ -31,7 +31,7 @@ var defaultAttributes = {
 //    SameSite : 'lax', // strict > lax >>>>>> none(允許第三方)
 }
 // 串接
-function assign () {
+function assign() {
     var target = {};
     for (var i = 0; i < arguments.length; ++i) {
         var source = arguments[i];
@@ -42,33 +42,30 @@ function assign () {
     return target;
 }
 // main
-function init (converter, defaultAttributes)
+function init(converter, defaultAttributes)
 {
-    function get (key)
+    function get(key)
     {
         if (typeof document === 'undefined' || (arguments.length && !key)) {
             return
         }
-
-        var cookies = document.cookie ? document.cookie.split(';') : [];
-        var jar = {};
-
-        cookies.forEach(function (cookie) {
-            var parts = cookie.split('=');
+        let cookies = document.cookie ? document.cookie.split("; ") : [];
+        let jar = {};
+        for(let i = 0; i < cookies.length; ++i)
+        {
+            let parts = cookies[i].split('=');
             try {
                 jar[parts[0]] = converter.read(parts[1]);
             } catch (e) {}
-        });
-    
+        }        
         return key ? jar[key] : jar;
     }
 
-    function set (key, value, attributes)
+    function set(key, value, attributes)
     {
         if (typeof document === 'undefined') {
             return
         }
-
         const ifiedAttributes = assign(defaultAttributes, attributes);
         var stringifiedAttributes = '';
         for (var attributeName in ifiedAttributes)
@@ -92,10 +89,10 @@ function init (converter, defaultAttributes)
                 })
             );
         },
-        withAttributes: function (attributes) {
+        withAttributes : function (attributes) {
             return init(this.converter, assign(this.attributes, attributes))
         },
-        withConverter: function (converter) {
+        withConverter : function (converter) {
             return init(assign(this.converter, converter), this.attributes)
         }
     },

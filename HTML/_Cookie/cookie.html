@@ -23,13 +23,14 @@
         border: 1px black solid;
     }
 </style>
-<script src="Cookie.js"></script>
+<script src="./MyCookie.js"></script>
 <script>
     //cookieAge = 60;
     //顯示cookie
     function showCookie(){
         const cookies = document.cookie.replace(/;\s/g, "<br>");
         cookiesData.innerHTML = cookies;
+        console.log(MyCookie.get())
     }
 </script>
 <body>
@@ -40,9 +41,9 @@
         </div>
         <div class="user-input">
             <input type="button" value="顯示cookie" onclick="showCookie()">
-            <input type="button" value="新增cookie" onclick="myCookie.add(cookieName.value, cookieValue.value); showCookie()">
-            <input type="button" value="指定cookie" onclick="console.log(myCookie.get(cookieName.value, 'cc'))">
-            <input type="button" value="刪除cookie" onclick="myCookie.remove(cookieName.value); showCookie()">
+            <input type="button" value="新增cookie" onclick="MyCookie.set(cookieName.value, cookieValue.value); showCookie()">
+            <input type="button" value="指定cookie" onclick="console.log(MyCookie.get(cookieName.value, 'cc'))">
+            <input type="button" value="刪除cookie" onclick="MyCookie.remove(cookieName.value); showCookie()">
         </div>
     </div>
     <div id="cookiesData"></div>
