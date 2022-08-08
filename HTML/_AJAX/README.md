@@ -21,6 +21,9 @@ $.ajax({
     url: "./weatherforecast",
     type: "GET",
     dataType: "json",
+    data: { a: 123 }, // 傳甚麼資料過去 Object、String、Array
+  cache: false, //暫存(cache)在本地，以減少對伺服器的呼叫
+    async: false, // true/false 同步/非同步
     contentType: "application/json;charset=utf-8",
     success: function (returnData) {
         console.log(returnData);
