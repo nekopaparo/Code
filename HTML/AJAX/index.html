@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Sample</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+</head>
+<body>
+    <template id="data">
+        <div style="border: rgb(0, 0, 0) solid 1px;">
+            <div></div>
+            <div></div>
+        </div>
+    </template>
+    <script>
+        document.write('<h2>1. AJAX Base Sample</h2>');
+        var xmlHTTP = new XMLHttpRequest();
+        xmlHTTP.open('POST', './getPost.php', false);
+        xmlHTTP.setRequestHeader('Content-type', 'application/x-www-form-urlencoded; charset=utf-8');
+        xmlHTTP.onload = function () {
+            if (xmlHTTP.status === 200) {
+                document.write(xmlHTTP.response);
+            }
+        }
+        xmlHTTP.send('name=貓貓&do=喵喵');
+        
+        $.ajax({
+            url: './getPost.php',
+            type: 'POST', // 'GET', 'POST'
+            dataType: 'text', // 'text', 'json', 'html', 'xml', 'script', 'jsonp'
+            data: { name: '狗狗', do: '汪汪' }, // 傳甚麼資料過去 Object、String、Array
+            async: false, // true/false 同步/非同步
+            contentType: 'application/x-www-form-urlencoded; charset=utf-8', // 'application/x-www-form-urlencoded; charset=UTF-8'
+            success: function (html) {
+                document.body.innerHTML += html;
+            }
+        });
+
+        // 讀取json
+        document.write('<h2>2. AJAX JSON Read</h2>');
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open('GET', "./data.json", false);
+        //xmlHttp.responseType = 'json';
+        xmlHttp.onload = function () {
+            add(JSON.parse(xmlHttp.response)['Animals'])
+        };
+        xmlHttp.send();
+
+        document.write('<br>');
+        
+        $.ajax({
+            url: './data.json',
+            type: 'GET', // 'GET', 'POST'
+            dataType: 'json', // 'text', 'json', 'html', 'xml', 'script', 'jsonp'
+            async: false, // true/false 同步/非同步
+            success: function (data) {
+                add(data['Animals']);
+            }
+        });
+
+        function add(Animals) {
+            if ('content' in document.createElement('template')) {
+                var tmp = document.querySelector('#data');
+                var insert_path = document.body; // 模板建立完後，要插入的位置
+                // 模板客製化的目標
+                var tmp_target = tmp.content.querySelectorAll("div div");
+                
+                Animals.forEach(function (Animal){
+                    // 以模板來實例化表格
+                    tmp_target[0].textContent = `姓名 : ${Animal.name}`;
+                    tmp_target[1].textContent = `年齡 : ${Animal.age}`;
+                    // 複製新的並將其新增至insert
+                    var clone = document.importNode(tmp.content, true);
+                    insert_path.appendChild(clone);
+                });
+            }
+            else {
+                // 因為 HTML template 不被支援，所以要用其他方法在表格增加新行
+            }
+        }
+    </script>
+</body>
+</html>
