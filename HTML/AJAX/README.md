@@ -1,5 +1,8 @@
-#### xmlHTTP
+|[XMLHttpRequest](#XMLHttpRequest)|[JQuery.ajax](#JQuery.ajax)|
+|-|-|
+### XMLHttpRequest
 ```js
+// https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
 var xmlHTTP = window.XMLHttpRequest? new XMLHttpRequest()
                : window.ActiveXObject? new ActiveXObject('Microsoft.XMLHTTP') 
                 : undefined;
@@ -50,7 +53,7 @@ xmlHTTP.status
 
 + 404：資料讀取錯誤
 
-#### JQuery ajax
+### JQuery.ajax
 ```js
 // Documentation: https://api.jquery.com/jquery.ajax/
 $.ajax({

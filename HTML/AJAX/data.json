@@ -2,18 +2,15 @@
     "Animals" : [
         {
             "name" : "小貓",
-            "age" : 4,
-            "sex" : 1
+            "age" : 4
         },
         {
             "name" : "小狗",
-            "age" : 6,
-            "sex" : 0
+            "age" : 6
         },
         {
             "name" : "小羊",
-            "age" : 3,
-            "sex" : 0
+            "age" : 3
         }
     ]
 }
