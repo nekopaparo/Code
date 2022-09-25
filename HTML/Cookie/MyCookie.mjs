@@ -49,7 +49,7 @@ function init(converter, defaultAttributes)
         if (typeof document === 'undefined' || (arguments.length && !key)) {
             return
         }
-        let cookies = document.cookie ? document.cookie.split("; ") : [];
+        let cookies = document.cookie ? document.cookie.split('; ') : [];
         let jar = {};
         for(let i = 0; i < cookies.length; ++i)
         {

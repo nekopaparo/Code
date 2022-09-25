@@ -61,7 +61,7 @@
                 return
             }
 
-            let cookies = document.cookie ? document.cookie.split("; ") : [];
+            let cookies = document.cookie ? document.cookie.split('; ') : [];
             let jar = {};
 
             for(let i = 0; i < cookies.length; ++i)

@@ -33,6 +33,12 @@
         console.log(MyCookie.get())
     }
 </script>
+<script type="module">
+    import Cookies from './MyCookie.mjs';
+    Cookies.set('A', 1);
+    Cookies.set('B', 2);
+    Cookies.set('C', 3);
+</script>
 <body>
     <div class="cookie">
         <div class="user-input">
@@ -42,7 +48,7 @@
         <div class="user-input">
             <input type="button" value="顯示cookie" onclick="showCookie()">
             <input type="button" value="新增cookie" onclick="MyCookie.set(cookieName.value, cookieValue.value); showCookie()">
-            <input type="button" value="指定cookie" onclick="console.log(MyCookie.get(cookieName.value, 'cc'))">
+            <input type="button" value="指定cookie" onclick="cookieValue.value = MyCookie.get(cookieName.value)">
             <input type="button" value="刪除cookie" onclick="MyCookie.remove(cookieName.value); showCookie()">
         </div>
     </div>
