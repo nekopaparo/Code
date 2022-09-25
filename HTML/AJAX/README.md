@@ -1,4 +1,4 @@
-|[XMLHttpRequest](#XMLHttpRequest)|[JQuery.ajax](#JQuery.ajax)|
+|[XMLHttpRequest](#XMLHttpRequest)|[JQuery.ajax](#JQueryajax)|
 |-|-|
 ### XMLHttpRequest
 ```js
