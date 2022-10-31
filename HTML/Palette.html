@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>調色盤</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            width: 100vw;
+        }
+        #colors {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+        .color {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            border-radius: 10px;
+            font-size: xx-large;
+            cursor: pointer;
+        }
+        .color:hover {
+            border: 5px gold solid;
+        }
+    </style>
+</head>
+<body>
+    <div id="colors">
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    </div>
+    <script>
+        window.addEventListener('keydown', function(e) {
+            switch(e.code) {
+                case 'Space':
+                refresh();
+                break;
+            }
+        });
+        
+        // https://kumo.tw/article.php?id=73
+        document.querySelectorAll('.color').forEach(function(item) {
+            item.addEventListener('click', function(e) {
+                // 建立 Range 物件
+                const range = document.createRange();
+                // 將指定元素內容加到 Range 中
+                range.selectNode(item);
+                // 取得 Selection 物件
+                const selection = window.getSelection();
+                // 先清空當前選取範圍
+                selection.removeAllRanges();
+                // 加入 Range 
+                selection.addRange(range);
+                
+                document.execCommand('copy');
+                selection.removeAllRanges();
+            });
+        });
+        refresh();
+
+        function refresh() {
+            let number = '012345678';
+            document.querySelectorAll('.color').forEach(function(item) {
+                let color = getColor();
+                item.innerText = color;
+                item.style.backgroundColor = color;
+                item.style.color = number.includes(color[1]) ? 'white' : 'black';
+            });
+        }
+
+        function getColor() {
+            let color = decimalToHexadecimal(Math.floor(Math.random() * 16777216));
+            while (color.length < 6) {
+                color = '0' + color;
+            }
+            return `#${color}`;
+        }
+
+        function decimalToHexadecimal(decimal) {
+            var Hexadecimal = '0123456789ABCDEF';
+            var result = '';
+            while ( decimal > 0 ) {
+                result = Hexadecimal[decimal % 16] + result;
+                decimal = Math.floor(decimal / 16);
+            }
+            return result;
+        }
+    </script>
+</body>
+</html>
