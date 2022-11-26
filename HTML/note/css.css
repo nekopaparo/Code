@@ -9,6 +9,11 @@
 }
 
 .note{
+    /* 文字超過變... */
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+    overflow:hidden;
+    
     box-sizing:border-box; /* 使元素的寬度包括padding margin, border*/
 
     display: flex;
@@ -33,7 +38,6 @@
     position: relative; /*該區塊為relative(相對配置)，position: absolute用*/
     position: absolute; /*該區塊為absolute(絕對配置)，以relative的左上角為起點，預設是body*/
     
-
     cursor: pointer; /*滑鼠特效*/
 
     z-index: 1; /*顯示順序，越大越前面*/
