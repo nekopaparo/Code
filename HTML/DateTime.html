@@ -16,13 +16,11 @@
         
 </body>
 <script>
-    
     function time() {
         let time = Date.now();
         _Date.innerText = new Date(time).toDateString();
         LocaleDate.innerText = new Date(time).toLocaleDateString();
     }
-
     function timeRun() {
         let time = Date.now();
         Str.innerText = new Date(time).toString();
@@ -40,6 +38,5 @@
         setInterval(timeRun, 1000);
     },1000 - Date.now() % 1000);
 
-    
 </script>
 </html>
