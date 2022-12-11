@@ -20,13 +20,13 @@
 <script>
     // 透過檢查 HTML template 元素屬性的存在與否，以測試瀏覽器是否支援它
     if ('content' in document.createElement('template')) {
-        var tmp = document.querySelector('#data');
+        let tmp = document.querySelector('#data');
         // 模板客製化的目標
-        var tmp_target = tmp.content.querySelectorAll("div div");
+        let tmp_target = tmp.content.querySelectorAll("div div");
         // 模板建立完後，要插入的位置
-        var insert_path = document.querySelector("#home");
+        let insert_path = document.querySelector("#home");
         
-        var clone = null;
+        let clone = null;
 
         // 以模板來實例化表格
         // tmp data
