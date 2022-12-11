@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+<style>
+    .cookie {
+        width: 10cm;
+        border: 1px black solid;
+    }
+    .user-input {
+        width: 10cm;
+        display: flex;
+        border: 1px black solid;
+    }
+    .user-input * {
+        width: 50%;
+    }
+    #cookiesData {
+        width: 10cm;
+        border: 1px black solid;
+    }
+</style>
+<script src="./MyCookie.js"></script>
+<script>
+    //cookieAge = 60;
+    //顯示cookie
+    function showCookie(){
+        const cookies = document.cookie.replace(/;\s/g, "<br>");
+        cookiesData.innerHTML = cookies;
+        console.log(MyCookie.get())
+    }
+</script>
+<script type="module">
+    import Cookies from './MyCookie.mjs';
+    Cookies.set('A', 1);
+    Cookies.set('B', 2);
+    Cookies.set('C', 3);
+</script>
+<body>
+    <div class="cookie">
+        <div class="user-input">
+            <input id="cookieName" type="text" placeholder="cookieName">
+            <input id="cookieValue" type="text" placeholder="cookieValue">
+        </div>
+        <div class="user-input">
+            <input type="button" value="顯示cookie" onclick="showCookie()">
+            <input type="button" value="新增cookie" onclick="MyCookie.set(cookieName.value, cookieValue.value); showCookie()">
+            <input type="button" value="指定cookie" onclick="cookieValue.value = MyCookie.get(cookieName.value)">
+            <input type="button" value="刪除cookie" onclick="MyCookie.remove(cookieName.value); showCookie()">
+        </div>
+    </div>
+    <div id="cookiesData"></div>
+    
+</body>
+</html>

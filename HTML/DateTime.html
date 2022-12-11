@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間</title>
+</head>
+<body>
+    <div id="Str"></div>
+    <div id="_Date"></div>
+    <div id="Time"></div>
+    <div id="_ISO"></div>
+    <div id="LocaleDate"></div>
+    <div id="LocaleTime"></div>
+    <div><span id="tw"></span>&nbsp;GMT+0800 (台北標準時間)</div>
+        
+</body>
+<script>
+    
+    function time() {
+        let time = Date.now();
+        _Date.innerText = new Date(time).toDateString();
+        LocaleDate.innerText = new Date(time).toLocaleDateString();
+    }
+
+    function timeRun() {
+        let time = Date.now();
+        Str.innerText = new Date(time).toString();
+        Time.innerText = new Date(time).toTimeString();
+        _ISO.innerText = new Date(time).toISOString();
+        LocaleTime.innerText = new Date(time).toLocaleTimeString();
+        tw.innerText = new Date(time+8*1000*60*60).toUTCString().slice(12,25);
+    }
+
+    time();
+    timeRun();
+
+    setTimeout(function () {
+        timeRun();
+        setInterval(timeRun, 1000);
+    },1000 - Date.now() % 1000);
+
+    
+</script>
+</html>
